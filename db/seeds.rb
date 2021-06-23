@@ -8,6 +8,9 @@
 require 'csv'
 
 puts 'clean db'
+KitPlant.destroy_all
+Order.destroy_all
+Kit.destroy_all
 Plant.destroy_all
 User.destroy_all
 # Van.destroy_all
@@ -53,3 +56,39 @@ csvp.each do |row|
 end
 puts "There are now #{User.count} rows in the users table"
 
+csv_kits = File.read(Rails.root.join('db', 'Seeds Good Garden - KITS.csv'))
+csvk = CSV.parse(csv_kits, :headers => true, :encoding => 'ISO-8859-1')
+csvk.each do |row|
+  t = Kit.new
+  t.name = row['name']
+  t.user_id = User.ids.first
+  t.slot = row['slot']
+  t.img_url = row['img_url']
+  t.kit_price = row['kit_price']
+  t.tools = row['tools']
+  t.save!
+  puts "User has is #{t.slot} kit saved !"
+end
+puts "There are now #{Kit.count} rows in the users table"
+
+puts "creating kits plants"
+
+KitPlant.create!(plant_id: "#{Plant.first.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.last.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.first.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.last.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.first.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.last.id}", kit_id:"#{Kit.last.id}")
+KitPlant.create!(plant_id: "#{Plant.first.id}", kit_id:"#{Kit.first.id}")
+KitPlant.create!(plant_id: "#{Plant.last.id}", kit_id:"#{Kit.first.id}")
+
+puts "#{KitPlant.count} kits created ! "
+
+puts "creating orders"
+
+Order.create!(user_id: "#{User.first.id}", kit_id:"#{Kit.first.id}", status:"confirmed")
+Order.create!(user_id: "#{User.first.id}", kit_id:"#{Kit.last.id}", status:"confirmed")
+Order.create!(user_id: "#{User.last.id}", kit_id:"#{Kit.last.id}", status:"confirmed")
+Order.create!(user_id: "#{User.last.id}", kit_id:"#{Kit.first.id}", status:"confirmed")
+
+puts "#{Order.count} orders created !"
