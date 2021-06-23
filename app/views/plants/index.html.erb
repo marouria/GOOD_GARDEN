@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Toutes nos plantes</h1>
+  <% @plants.each do |plant| %>
+  <div class="cards-plant">
+    <div class="card-plant">
+      <div class="card-plant_image"> <img src="<%= plant.img_url %>" /> </div>
+        <div class="card-plant_title title-white">
+          <p><%= plant.name %></p>
+        </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
