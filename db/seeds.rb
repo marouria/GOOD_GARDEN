@@ -9,6 +9,7 @@ require 'csv'
 
 puts 'clean db'
 Plant.destroy_all
+User.destroy_all
 # Van.destroy_all
 # User.destroy_all
 puts 'create seed db'
@@ -32,4 +33,23 @@ csv.each do |row|
 end
 puts "There are now #{Plant.count} rows in the plants table"
 
+
+csv_users = File.read(Rails.root.join('db', 'Seeds Good Garden - USERS.csv'))
+csvp = CSV.parse(csv_users, :headers => true, :encoding => 'ISO-8859-1')
+csvp.each do |row|
+  t = User.new
+  t.first_name = row['first_name']
+  t.last_name = row['last_name']
+  t.address = row['address']
+  t.email = row['email']
+  t.password = row['password']
+  t.save!
+  puts "#{t.first_name} saved !"
+end
+puts "There are now #{User.count} rows in the users table"
+
+# csv2 = CSV.parse(csv_users, :headers => true, :encoding => 'ISO-8859-1')
+# csv2.each do |row|
+#
+# end
 
