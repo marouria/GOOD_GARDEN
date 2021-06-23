@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="logo">
+  <div class="logo flex-grow-1">
   <%= link_to "#", class: "navbar-brand" do %>
   <h4><%= image_tag "logo.PNG"%><%= " | Good Garden" %></h4>
   <% end %>
@@ -8,13 +8,13 @@
     </button>
   </div>
 
-    <div class="navbar-link-position link-background">
+    <div class="navbar-link-position link-background flex-grow-2">
       <h4><%= link_to "Explorer nos plantes", "#", class: "nav-link middle"%></h4>
       <h4><%= link_to "Mon jardin", "#", class: "nav-link middle"%></h4>
       <h4><%= link_to "A propos", "#", class: "nav-link middle"%></h4>
     </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent flex-grow-1">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
@@ -37,9 +37,6 @@
            <%= link_to new_user_session_path, class: "nav-link " do %>
             <%= image_tag "tom.jpeg", class: "avatar avatar-rounded"%>
           <% end %>
-
-
-
         </li>
       <% end %>
     </ul>

@@ -1,6 +1,8 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
 }
 
@@ -15,7 +17,6 @@
 .navbar-link-position {
   display: flex;
   align-items: center;
-  justify-content: center;
   text-decoration: none;
 }
 
@@ -52,7 +53,6 @@ a.middle:hover:before {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 
