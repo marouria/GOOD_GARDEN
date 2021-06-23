@@ -16,18 +16,23 @@ puts 'create seed db'
 
 
 
-csv_plants = File.read(Rails.root.join('db', 'Seeds Good Garden - PLANTS (1).csv'))
+csv_plants = File.read(Rails.root.join('db', 'Seeds Good Garden - PLANTS.csv'))
 csv = CSV.parse(csv_plants, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = Plant.new
   t.name = row['name']
   t.sunshine_rate = row ['sunshine_rate']
   t.watering = row ['watering']
-  t.img_url = "https://source.unsplash.com/#{row ['img_url']}/1000x1000"
   t.season = row ['season']
   t.user_level = row ['user_level']
   t.price = row ['price']
   t.stock = row ['stock']
+  if
+    row['img_url'].include?('http')
+    t.img_url = row['img_url']
+  else
+    t.img_url = "https://source.unsplash.com/#{row ['img_url']}/1000x1000"
+  end
   t.save
   puts "#{t.name} saved !"
 end
@@ -47,9 +52,4 @@ csvp.each do |row|
   puts "#{t.first_name} saved !"
 end
 puts "There are now #{User.count} rows in the users table"
-
-# csv2 = CSV.parse(csv_users, :headers => true, :encoding => 'ISO-8859-1')
-# csv2.each do |row|
-#
-# end
 
