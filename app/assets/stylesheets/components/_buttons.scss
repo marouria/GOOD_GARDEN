@@ -1,0 +1,17 @@
+.active-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #014034;
+  transition: background 0.3s ease;
+  opacity: 1;
+
+}
+
+.active-button:hover {
+  background: #014034;
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
