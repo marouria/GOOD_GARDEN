@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'clean db'
+# Orders.destroy_all
+# Van.destroy_all
+# User.destroy_all
+puts 'create seed db'
