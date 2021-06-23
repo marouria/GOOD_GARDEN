@@ -79,10 +79,10 @@
 .card-plant .card-plant_title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
+
   font-weight: bold;
   font-size: 20px;
-  margin-top: -40px;
+  margin-top: 0px;
   height: 40px;
 }
 
@@ -92,6 +92,6 @@
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
-.title-white {
-  color: white;
+.title-color {
+  color: black;
 }
