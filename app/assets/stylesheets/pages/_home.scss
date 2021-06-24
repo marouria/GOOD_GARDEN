@@ -25,6 +25,17 @@ h1 {
   font-size: 55px;
 }
 
-p {
+.text-position p {
   font-size: 20px;
+}
+
+#flexbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  padding-bottom: 60px;
+}
+
+.card {
+  border: transparent;
 }
