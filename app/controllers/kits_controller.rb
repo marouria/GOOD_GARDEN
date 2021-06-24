@@ -11,9 +11,17 @@ class KitsController < ApplicationController
   end
 
   def create
-    @kit = Kit.new(params_kit)
+    @kit = Kit.new
+    @kit.user_id = current_user.id
+    @kit.save
+    @plants = params[:plant]
+    @plants.each do |plant|
+      @kitplant = KitPlant.new
+      @kitplant.kit_id = @kit.id
+      @kitplant.plant_id = plant[0]
+      @kitplant.save
+    end
     if @kit.save
-
       redirect_to kit_path(@kit)
     else
       render :new
@@ -25,6 +33,8 @@ class KitsController < ApplicationController
   def params_kit
     params.require(:kit).permit(:slot, :img_url, :kit_price, :name, :tools, :user_id)
   end
+
+  def params_plant
+    params.require(:kitplant).permit(:plant_id, :user_id)
+  end
 end
-
-
