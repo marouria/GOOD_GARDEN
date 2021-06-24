@@ -7,7 +7,7 @@ class KitsController < ApplicationController
     @kit = Kit.new(params_kit)
     if @kit.save
 
-      redirect_to preferences_path
+      redirect_to kit_path(@kit)
     else
       render :new
     end
