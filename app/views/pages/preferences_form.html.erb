@@ -1,7 +1,38 @@
 <h1>Commence ton jardin</h1>
 
-<%= simple_form_for @plant do |f| %>
-  <%= f.input :user_level %>
-  <%= f.input :season %>
-  <%= f.button :submit %>
+
+<%= form_tag plants_path,method: :get do %>
+
+<%= label_tag 'Quel est ton niveau en jardinage ?' %><br>
+<%= text_field_tag :query,
+ params[:query],
+   class: "form-control",
+     placeholder: "Niveau"
+%>
+
+<%= label_tag 'En quelle saison veux-tu planter ?' %><br>
+<input type="radio" id="summer" name="season" value="Été">
+<label for="summer">Été</label><br>
+<input type="radio" id="winter" name="season" value="Hiver">
+<label for="winter">Hiver</label><br>
+<%=text_field_tag :query,
+ params[:query],
+   class: "form-control",
+     placeholder: "Saison"
+%>
+
+<%= label_tag 'Combien de plantes veux-tu dans ton carré ?' %>
+<%= text_field_tag :query,
+ params[:query],
+   class: "form-control",
+     placeholder: "Taille"
+%>
+
+<%= label_tag 'As-tu besoin de matériel ? (terreau, outils)' %>
+<%= text_field_tag :query,
+ params[:query],
+   class: "form-control",
+     placeholder: "Outils"
+%>
 <% end %>
+
