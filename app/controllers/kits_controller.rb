@@ -1,4 +1,10 @@
 class KitsController < ApplicationController
+  def show
+    @kit = Kit.find(params[:id])
+    @plants = KitPlant.where(kit_id: params[:id])
+    @total_price = 0
+  end
+
   def new
     @kit = Kit.new
   end
