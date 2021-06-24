@@ -7,13 +7,24 @@
   min-height: 100vh;
 }
 
-.full-screen {
-  height: 100vh;
-}
-
-#home-background {
-  background-repeat: no-repeat;
+.banner {
+  height: 900px;
+  background-image: url("serre-banner.png");
   background-position: right;
   background-size: contain;
-  background-image: url("serre.png");
+  background-repeat: no-repeat;
+}
+
+.text-position {
+  position: absolute;
+  top: 290px;
+  left: 100px;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+p {
+  font-size: 20px;
 }

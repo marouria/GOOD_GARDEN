@@ -1,0 +1,46 @@
+
+<h1 class="text-center mt-5 mb-5">Ton carré personnalisé</h1>
+
+<!-- Avec une table morray -->
+<div class="container">
+
+  <table class="table table-borderless">
+
+    <thead class="border-bottom">
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Plante</th>
+      <th scope="col">Prix</th>
+    </thead>
+
+    <tbody>
+
+      <% @plants.each_with_index do |plant, index| %>
+      <% plant = Plant.find_by(id: @plants[index].plant_id) %>
+
+      <tr class="">
+        <th class="align-middle" scope="row"><%= index + 1 %></th>
+        <td><%= image_tag "#{plant.img_url}", size:"50" %></td>
+        <td class="align-middle"><%= plant.name %></td>
+        <td class="align-middle"><%= plant.price %> €</td>
+      </tr>
+
+      <% @total_price += plant.price %>
+      <% end %>
+
+      <tr class="border-top">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><p><strong>Total price : <%= @total_price %> €</strong></p></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <a href="" class="inactive-button mr-5">Retour</a>
+  <a href="" class="active-button">Payer</a>
+</div>
+
