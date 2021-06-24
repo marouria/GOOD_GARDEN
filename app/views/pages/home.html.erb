@@ -9,11 +9,29 @@
 
 <div class="container">
   <h2>Comment ça fonctionne ?</h2>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Dis nous le jardinier que tu es</p>
+  <div class="cards"  id="flexbox">
+
+    <div class="card" style="width: 18rem;">
+      <%= image_tag "icons/shovel.svg", class:"card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">1. Dis nous le jardinier que tu es</p>
+      </div>
     </div>
+
+    <div class="card" style="width: 18rem;">
+      <%= image_tag "icons/plant.svg", class:"card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">2. Dis nous le jardinier que tu es</p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <%= image_tag "icons/pallets.svg", class:"card-img-top" %>
+      <div class="card-body">
+        <p class="card-text">3. Dis nous le jardinier que tu es</p>
+      </div>
+    </div>
+
   </div>
   <%= link_to 'Commencer', preferences_path, class: "active-button" %>
 </div>
