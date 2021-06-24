@@ -6,3 +6,14 @@
 .layout {
   min-height: 100vh;
 }
+
+.full-screen {
+  height: 100vh;
+}
+
+#home-background {
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  background-image: url("serre.png");
+}
