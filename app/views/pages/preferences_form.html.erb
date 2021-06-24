@@ -4,6 +4,12 @@
 <%= form_tag plants_path,method: :get do %>
 
 <%= label_tag 'Quel est ton niveau en jardinage ?' %><br>
+<input type="radio" id="summer" name="user_level" value="jeune pousse">
+<label for="summer">Été</label><br>
+<input type="radio" id="winter" name="user_level" value="belle plante">
+<label for="winter">Hiver</label><br>
+<input type="radio" id="winter" name="user_level" value="belle ">
+<label for="winter">Hiver</label><br>
 <%= text_field_tag :query,
  params[:query],
    class: "form-control",
