@@ -17,22 +17,25 @@
 <input type="radio" id="expert" name="user-level" value="expert">
 <label for="expert">Chêne centenaire</label><br>
 
-<% if false %>
+
 
 <%= label_tag 'Combien de plantes veux-tu dans ton carré ?' %>
-<%= text_field_tag :query,
- params[:query],
-   class: "form-control",
-     placeholder: "Taille"
-%>
+<br>
+
+<input type="radio" id="2" name="slot" value="2">
+<label for="2">2</label><br>
+<input type="radio" id="4" name="slot" value="4">
+<label for="4">4</label><br>
+<input type="radio" id="6" name="slot" value="6">
+<label for="6">6</label><br>
+
 
 <%= label_tag 'As-tu besoin de matériel ? (terreau, outils)' %>
-<%= text_field_tag :query,
- params[:query],
-   class: "form-control",
-     placeholder: "Outils"
-%>
-<% end %>
+<br>
+<input type="radio" id="answer_yes" name="tools" value="true">
+<label for="answer_yes">Oui</label><br>
+<input type="radio" id="answer_no" name="tools" value="false">
+<label for="answer_no">Non</label><br>
 
  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
