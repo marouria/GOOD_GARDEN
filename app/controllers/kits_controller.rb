@@ -7,6 +7,7 @@ class KitsController < ApplicationController
 
   def new
     @kit = Kit.new
+    @plants = Plant.where(season: params[:season], user_level: params[:user_level])
   end
 
   def create
