@@ -1,0 +1,26 @@
+.tag-content {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  color: #014034;
+  font-weight: bold;
+  border: 1px solid #014034;
+  padding: 8px 24px;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  height: 90px;
+  width: 180px;
+  margin: 10px;
+}
+
+.tag-selector:checked + label {
+  background-color: #DCE29F;
+  color: black;
+}

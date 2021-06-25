@@ -14,24 +14,76 @@
     <div class="card" style="width: 18rem;">
       <%= image_tag "icons/shovel.svg", class:"card-img-top" %>
       <div class="card-body">
-        <p class="card-text">1. Dis nous le jardinier que tu es</p>
+        <p class="card-text">1. Parles nous de toi</p>
       </div>
     </div>
 
     <div class="card" style="width: 18rem;">
       <%= image_tag "icons/plant.svg", class:"card-img-top" %>
       <div class="card-body">
-        <p class="card-text">2. Dis nous le jardinier que tu es</p>
+        <p class="card-text">2. Personalise ton kit</p>
       </div>
     </div>
 
     <div class="card" style="width: 18rem;">
       <%= image_tag "icons/pallets.svg", class:"card-img-top" %>
       <div class="card-body">
-        <p class="card-text">3. Dis nous le jardinier que tu es</p>
+        <p class="card-text">3. Recois ton kit et commence à jardiner</p>
       </div>
     </div>
 
   </div>
   <%= link_to 'Commencer', preferences_path, class: "active-button" %>
 </div>
+  <div class="container">
+    <div class="container py-5 ">
+        <h2 id= "padding-top">Nos good gardener à l'honneur</h2><br>
+          <div id="carouselExampleCaptions " class="carousel container slide carousel-resizing " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag "tom.jpg", class:"card-img-top d-block w-100 rounded"%>
+             <!--  <img src="tom.jpg" class="d-block w-100" alt="..."> -->
+              <div class="carousel-caption d-none d-md-block good-style">
+                <h5>Tom, 33 ans</h5>
+                <p>“ J’adore jardiner l’été. J’ai décidé de composer mon carré avec de la menthe, un citronnier et des framboises. Une bonne occasion d’inviter les copains à la maison pour une soirée mojito ! “</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "valentine.jpg", class:"card-img-top d-block w-100 rounded" %>
+              <div class="carousel-caption d-none d-md-block good-style">
+                <h5>Valentine, 25 ans</h5>
+                <p>Tout est beaucoup plus simple depuis que GoodGarden m'accompagne. Je ne laisse plus mes plantes mourir! </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "muriel.jpg", class:"card-img-top d-block w-100 rounded" %>
+              <div class="carousel-caption d-none d-md-block good-style">
+                <h5>Muriel, 35 ans</h5>
+                <p>Jardiner me permet de prendre du temps avec moi même</p>
+              </div>
+            </div>
+          </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div><br>
+          <br>
+          <br>
+          <br>
+          <%= link_to 'Commencer', preferences_path, class: "active-button" %>
+          <br>
+          <br>
+      </div>
+</div>
+
+

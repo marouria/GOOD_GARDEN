@@ -40,7 +40,7 @@
 </div>
 
 <div class="container d-flex justify-content-center">
-  <a href="" class="inactive-button mr-5">Retour</a>
-  <a href="" class="active-button">Payer</a>
+  <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+  <%= link_to 'Payer', dashboard_path, class:'active-button' %>
 </div>
 
