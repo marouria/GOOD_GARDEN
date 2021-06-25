@@ -7,7 +7,7 @@
           <%   @plants.each do |plant| %>
           <div class="tag-content">
               <input class="tag-selector" type="checkbox" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-              <label class="" for="plant-<%= plant.id %>"><%= image_tag "#{plant.img_url}", size:"50", class:"rounded-lg" %> <br><%=plant.name %></label>
+              <label class="" for="plant-<%= plant.id %>"><%= image_tag "#{plant.img_url}", size:"50", class:"rounded-lg mb-2" %> <br><%=plant.name %></label>
           </div>
           <% end %>
           <br>
