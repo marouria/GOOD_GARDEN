@@ -145,9 +145,18 @@
   margin: auto;
   margin-top: 20px;
   padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5px;
+  column-gap: 5px;
 }
 
 .plant-garden {
   border-radius: 4px;
-  margin: 5px;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
