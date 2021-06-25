@@ -1,17 +1,19 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-        <h1>Compose ton jardin</h1>
+        <h1 class="mb-5">Compose ton jardin </h1>
+        <p><em>(Sélectionne au maximum  <%= @slots%> plantes)</em></p>
         <%= simple_form_for @kit do %>
           <%   @plants.each do |plant| %>
-          <input type="checkbox" id="plant" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-          <label for="plant"><%=plant.name %>, <%= plant.id %></label><br>
+          <input class="checkbox" type="checkbox" id="plant" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
+          <label for="plant"><%=plant.name %></label><br>
           <% end %>
-          <%= submit_tag "Valider", class: "active-button" %>
-      <% end %>
+          <%= submit_tag "Valider", class: "active-button mt-5" %>
+        <% end %>
     </div>
   </div>
 </div>
 
 
-
+<%= content_tag :div, class: "temp_information", data: {temp: @slots} do %>
+<% end %>
