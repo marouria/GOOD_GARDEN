@@ -1,0 +1,32 @@
+#conseil {
+  background-color: #DCE29F;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 40px;
+}
+
+#conseil h2 {
+  margin-bottom: 40px;
+}
+
+#conseil p {
+  margin-bottom: 30px;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.garden {
+  flex-grow: 1;
+  width: 70%;
+}
+
+.garden h1 {
+  margin-bottom: 50px;
+}
+
+.dashboard-container{
+  width: 100%;
+}

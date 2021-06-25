@@ -1,10 +1,22 @@
-<div class="container">
-  <h1>Mon jardin</h1>
-  <% @kits_user.each do |kit_user| %>
-    <div class="card-garden">
-      <% kit_user.plants.each do |plant|%>
-      <%= image_tag "#{plant.img_url}", size:"95", class:"plant-garden" %>
+<div class="flexbox">
+  <div class="dashboard-container d-flex">
+    <div class="garden">
+      <h1 class="text-center">Mon jardin</h1>
+      <% @kits_user.each do |kit_user| %>
+        <div class="card-garden">
+          <% kit_user.plants.each do |plant|%>
+          <div class="plant-garden" style="background-image: url(<%= plant.img_url%>);"></div>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
+
+    <div id="conseil" class="text-center">
+      <h2>Nos conseils</h2>
+      <p>Pensez à arroser vos plantes régulièrement</p>
+      <p>Apportez leur de l'amour</p>
+      <p>Leur lumière c'est vous</p>
+      <p>Dans la vie, parfois il faut se planter</p>
+    </div>
+  </div>
 </div>
