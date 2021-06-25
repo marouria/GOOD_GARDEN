@@ -4,9 +4,13 @@
         <h1 class="mb-5">Compose ton jardin </h1>
         <p><em>(Sélectionne au maximum  <%= @slots%> plantes)</em></p>
         <%= simple_form_for @kit do %>
+
           <%   @plants.each do |plant| %>
-          <input class="checkbox" type="checkbox" id="plant" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-          <label for="plant"><%=plant.name %></label><br>
+            <div class="list-group">
+              <label class="list-group-item" for="plant-<%= plant.id %>"><input class="form-check-input me-1" type="checkbox" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>"> <%=plant.name %></label><br>
+
+
+          </div>
           <% end %>
           <%= submit_tag "Valider", class: "active-button mt-5" %>
         <% end %>
