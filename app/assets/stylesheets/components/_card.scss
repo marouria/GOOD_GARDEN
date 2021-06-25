@@ -139,11 +139,15 @@
   padding: 16px;
 }
 
-.card-jardin {
-  margin: 20px;
+.card-garden {
+  width: 300px;
+  border-bottom: 1px solid grey;
+  margin: auto;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
-.plant-jardin {
+.plant-garden {
   border-radius: 4px;
   margin: 5px;
 }
