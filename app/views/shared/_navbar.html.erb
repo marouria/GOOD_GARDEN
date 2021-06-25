@@ -17,26 +17,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent flex-grow-1">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+     <!--    <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Messages", "#", class: "nav-link" %> -->
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "tom.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "tom.jpg", class: "avatar dropdown-toggle avatar-rounded", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+           <!--  <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %> -->
+            <h6> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item middle" %></h6>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-         <!--  <%= link_to "Login", new_user_session_path, class: "nav-link" %> -->
-           <%= link_to new_user_session_path, class: "nav-link " do %>
-            <%= image_tag "tom.jpg", class: "avatar avatar-rounded"%>
-          <% end %>
+       <h4> <%= link_to "Login", new_user_session_path, class: "nav-link middle" %></h4>
         </li>
       <% end %>
     </ul>
