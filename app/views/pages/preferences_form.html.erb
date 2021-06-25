@@ -6,39 +6,39 @@
 
 <div class="question">
   <h2 class="mb-5">En quelle saison veux-tu planter ?</h2>
-  <input type="radio" id="summer" name="season" value="summer">
-  <label for="summer"><%= image_tag "icons/sun.svg", class:'answer-icon' %></label>
-  <input type="radio" id="winter" name="season" value="winter">
+  <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
+  <label for="summer"><%= image_tag "icons/sun.svg", class:'answer-icon clickable' %></label>
+  <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
   <label for="winter"><%= image_tag "icons/snowflake.svg", class:'answer-icon' %></label><br>
 </div>
 
 <div class="question">
   <h2 class="mb-5">Quel est ton niveau en jardinage ?</h2>
-  <input type="radio" id="begin" name="user_level" value="begin">
-  <label for="begin"><%= image_tag "icons/leaf.png", class:'answer-icon' %></label>
-  <input type="radio" id="medium" name="user_level" value="medium">
-  <label for="medium"><%= image_tag "icons/floral.svg", class:'answer-icon' %></label>
-  <input type="radio" id="expert" name="user_level" value="expert">
-  <label for="expert"><%= image_tag "icons/tree.svg", class:'answer-icon' %></label>
+  <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
+  <label for="begin"><%= image_tag "icons/leaf.png", class:'answer-icon' %><br>Jeune pousse</label>
+  <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
+  <label for="medium"><%= image_tag "icons/floral.svg", class:'answer-icon' %><br>Belle plante</label>
+  <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
+  <label for="expert"><%= image_tag "icons/tree.svg", class:'answer-icon' %><br>Chêne centenaire</label>
 </div>
 
 <div class="question">
   <h2 class="mb-5">Combien de plantes veux-tu dans ton carré ?</h2>
-  <input type="radio" id="2" name="slot" value="2">
-  <label for="2">2</label>
-  <input type="radio" id="4" name="slot" value="4">
-  <label for="4">4</label>
-  <input type="radio" id="6" name="slot" value="6">
-  <label for="6">6</label><br>
+  <input type="radio" class="hidden-radio" id="2" name="slot" value="2">
+  <label for="2"><%= image_tag "icons/slot-2.png", class:'answer-icon' %></label>
+  <input type="radio" class="hidden-radio" id="4" name="slot" value="4">
+  <label for="4"><%= image_tag "icons/slot-4.png", class:'answer-icon' %></label>
+  <input type="radio" class="hidden-radio" id="6" name="slot" value="6">
+  <label for="6"><%= image_tag "icons/slot-6.png", class:'answer-icon' %></label><br>
 </div>
 
 
 <div class="question">
   <h2 class="mb-5">As-tu besoin de matériel ? (terreau, outils)</h2>
-  <input type="radio" id="answer_yes" name="tools" value="true">
-  <label for="answer_yes">Oui</label>
-  <input type="radio" id="answer_no" name="tools" value="false">
-  <label for="answer_no">Non</label><br>
+    <input type="radio" class="hidden-radio" id="answer_no" name="tools" value="false">
+  <label for="answer_no" class="inactive-button">Non</label>
+  <input type="radio" class="hidden-radio" id="answer_yes" name="tools" value="true">
+  <label for="answer_yes" class="active-button">Oui</label>
 </div>
 
  <%= submit_tag "Search", class: "btn btn-primary" %>
