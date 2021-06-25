@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Mon jardin</h1>
+  <% @kits_user.each do |kit_user| %>
+    <div class="card-jardin">
+      <% kit_user.plants.each do |plant|%>
+      <%= image_tag "#{plant.img_url}", size:"95", class:"plant-jardin" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
