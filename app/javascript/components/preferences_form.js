@@ -9,3 +9,8 @@ const scroll = () => {
 };
 
 export {scroll}
+
+const selectImage = () => {
+  const icones = document.querySelectorAll(".clickable");
+  console.log(icones);
+};
