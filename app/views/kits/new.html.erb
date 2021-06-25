@@ -11,6 +11,7 @@
           </div>
           <% end %>
           <br>
+          <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
           <%= submit_tag "Valider", class: "active-button mt-5" %>
         <% end %>
     </div>
@@ -20,3 +21,4 @@
 
 <%= content_tag :div, class: "temp_information", data: {temp: @slots} do %>
 <% end %>
+
