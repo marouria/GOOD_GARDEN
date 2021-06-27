@@ -10,7 +10,13 @@ const scroll = () => {
 
 export {scroll}
 
-const selectImage = () => {
-  const icones = document.querySelectorAll(".clickable");
-  console.log(icones);
+const pointImages = () => {
+  const images = document.querySelectorAll(".clickable");
+  images.forEach((image) => {
+    image.addEventListener('mouseover', (event) => {
+      event.currentTarget.classList.add('pointer');
+    });
+  });
 };
+
+export {pointImages}
