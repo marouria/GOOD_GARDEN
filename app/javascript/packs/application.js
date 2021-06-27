@@ -29,14 +29,23 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
-import { initSweetalert } from '../components/sweetalert';
+import {initSweetalert} from '../components/sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroll();
   pointImages();
-  initSweetalert();
+  initSweetalert('#payment-confirmation', {
+    title: "Paiement confirmé!",
+    text: "",
+    icon: "success"
+  }, (value) => {
+  if (value) {
+    const link = document.querySelector('#pay-link');
+    link.click();
+  }
+  });
 });
 
 
