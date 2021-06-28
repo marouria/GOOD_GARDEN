@@ -11,7 +11,7 @@ class KitsController < ApplicationController
   end
 
   def create
-    session[:plants] = params[:plant]
+    # session[:plants] = params[:plant]
     @kit = Kit.new
     @kit.user_id = current_user.id
     @kit.save!
