@@ -43,5 +43,10 @@
   <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
   <button id="payment-confirmation" class="active-button">Payer</button>
   <%= link_to 'Payer', dashboard_path, class:'active-button d-none', id:'pay-link' %>
+
+  <%= form_tag kit_orders_path(@kit) do %>
+  <%= hidden_field_tag 'kit_id', @kit.id %>
+  <%= submit_tag 'Payer avec Stripe', class: 'active-button' %>
+<% end %>
 </div>
 
