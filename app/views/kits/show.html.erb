@@ -41,6 +41,7 @@
 
 <div class="container d-flex justify-content-center">
   <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-  <%= link_to 'Payer', dashboard_path, class:'active-button' %>
+  <button id="payment-confirmation" class="active-button">Payer</button>
+  <%= link_to 'Payer', dashboard_path, class:'active-button d-none', id:'pay-link' %>
 </div>
 
