@@ -17,6 +17,9 @@ console.log(selection.dataset.slots);
           return to.el.children.length < selection.dataset.slots;
         }
       },
+      onEnd: (event) => {
+    alert(`${event.oldIndex} moved to ${event.newIndex}`);
+  }
       animation: 150
     });
  console.log(selection.dataset.slots);

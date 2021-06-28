@@ -29,3 +29,28 @@ html {
 .pointer {
   cursor: pointer;
 }
+
+// Style when you select a button
+
+.question input[type="radio"]:checked+label {
+  border-radius: 4px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.10), -5px -5px 30px 7px rgba(0,0,0,0.10);
+}
+
+// Progress Bar CSS on the form page
+
+.progress-container {
+  position: fixed;
+  bottom: 150px;
+  width: 30%;
+  height: 10px;
+  background: #DCE29F;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #014034;
+  width: 0%;
+  border-radius: 4px;
+}

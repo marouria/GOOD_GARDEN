@@ -1,4 +1,4 @@
-#conseil {
+.conseil {
   background-color: #DCE29F;
   height: 100vh;
   position: sticky;
@@ -6,16 +6,20 @@
   padding: 40px;
 }
 
-#conseil h2 {
+.conseil h2 {
   margin-bottom: 40px;
 }
 
-#conseil p {
+.conseil p {
   margin-bottom: 30px;
 }
 
 .flexbox {
   display: flex;
+}
+
+.dashboard-container{
+  width: 100%;
 }
 
 .garden {
@@ -27,6 +31,7 @@
   margin-bottom: 50px;
 }
 
-.dashboard-container{
-  width: 100%;
+#specific-advise {
+  display: none;
+  min-width: 389.34px;
 }
