@@ -9,7 +9,6 @@ const initSortable = () => {
     animation: 150,
     draggable: ".tag-content",
 });
-console.log(selection.dataset.slots);
   new Sortable(selection, {
       group: {
         name: 'shared',
@@ -22,7 +21,6 @@ console.log(selection.dataset.slots);
   }
       animation: 150
     });
- console.log(selection.dataset.slots);
 };
 
 
