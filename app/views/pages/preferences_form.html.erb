@@ -1,7 +1,11 @@
 <div class="container">
-  <!-- <div class="container">
-    <div id="scroll-progress" class="container" style="width: 27.4242%;"></div>
-  </div> -->
+
+  <div class="progress-container mt-5 mx-auto">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+
+
   <%= form_tag new_kit_path, method: :get do %>
   <div class="question flex-center" id="question-1">
     <h1 class="mb-5">Parles nous de toi</h1>
@@ -76,5 +80,14 @@
   <% end %>
 </div>
 
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
-
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>

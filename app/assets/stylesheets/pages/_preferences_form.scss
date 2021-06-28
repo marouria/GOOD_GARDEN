@@ -35,3 +35,19 @@ html {
   border-radius: 4px;
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.10), -5px -5px 30px 7px rgba(0,0,0,0.10);
 }
+
+.progress-container {
+  position: fixed;
+  top: 600px;
+  width: 50%;
+  height: 8px;
+  background: #DCE29F;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #014034;
+  width: 0%;
+  border-radius: 4px;
+}
