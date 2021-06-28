@@ -5,18 +5,28 @@
       <% @kits_user.each do |kit_user| %>
         <div class="card-garden">
           <% kit_user.plants.each do |plant|%>
-          <div class="plant-garden" style="background-image: url(<%= plant.img_url%>);"></div>
+          <div data-plant= <%= plant.name %> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> class="plant-garden" style="background-image: url(<%= plant.img_url %>);"></div>
           <% end %>
         </div>
       <% end %>
     </div>
 
-    <div id="conseil" class="text-center">
-      <h2>Nos conseils</h2>
+    <div id= "general-advise" class="conseil text-center">
+      <h2>Nos conseils généraux</h2>
       <p>Pensez à arroser vos plantes régulièrement</p>
       <p>Apportez leur de l'amour</p>
       <p>Leur lumière c'est vous</p>
       <p>Dans la vie, parfois il faut se planter</p>
     </div>
+
+
+        <div id="specific-advise" class="conseil text-center">
+          <h2 id="plant-name"></h2>
+          <p id="plant-watering"></p>
+          <p id="plant-sunshine"></p>
+          <p>Nos conseils: </p>
+        </div>
+
+
   </div>
 </div>
