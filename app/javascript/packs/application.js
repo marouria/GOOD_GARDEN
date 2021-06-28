@@ -30,6 +30,7 @@ import "bootstrap";
 import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
+import {initSortable} from '../components/sortable';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
     link.click();
   }
   });
+initSortable();
 });
 
 
