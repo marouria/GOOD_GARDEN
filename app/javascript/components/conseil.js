@@ -17,4 +17,17 @@ const displayPlant = () => {
   });
 };
 
-export {displayPlant}
+const backToDefault = () => {
+  const plants = document.querySelectorAll(".plant-garden");
+  const generalAdvise = document.getElementById("general-advise");
+  const specificAdvise = document.getElementById("specific-advise");
+
+  plants.forEach(plant => {
+    plant.addEventListener("mouseleave", (event) => {
+      specificAdvise.style.display = "none";
+      generalAdvise.style.display = "block";
+    });
+  });
+};
+
+export {displayPlant, backToDefault}
