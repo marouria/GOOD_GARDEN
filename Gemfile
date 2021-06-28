@@ -30,7 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
-#gem sweetalert2
+# gem money rails
+gem 'money-rails'
+
+# gem sweetalert2
 gem 'sweetalert2'
 
 gem 'autoprefixer-rails', '10.2.5'
