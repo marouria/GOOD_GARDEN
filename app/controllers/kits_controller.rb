@@ -1,4 +1,5 @@
 class KitsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
