@@ -28,7 +28,7 @@ csv.each do |row|
   t.watering = row ['watering']
   t.season = row ['season']
   t.user_level = row ['user_level']
-  t.price = row ['price']
+  t.price_cents = row ['price_cents']
   t.stock = row ['stock']
   if
     row['img_url'].include?('http')
@@ -64,7 +64,7 @@ csvk.each do |row|
   t.user_id = User.ids.first
   t.slot = row['slot']
   t.img_url = row['img_url']
-  t.kit_price = row['kit_price']
+  t.price_cents = row['price_cents']
   t.tools = row['tools']
   t.save!
   puts "User has is #{t.slot} kit saved !"

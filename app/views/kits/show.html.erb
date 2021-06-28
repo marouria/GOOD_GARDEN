@@ -22,7 +22,7 @@
         <th class="align-middle" scope="row"><%= index + 1 %></th>
         <td><%= image_tag "#{plant.img_url}", size:"50" %></td>
         <td class="align-middle"><%= plant.name %></td>
-        <td class="align-middle"><%= plant.price %> €</td>
+        <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
       </tr>
 
       <% @total_price += plant.price %>
