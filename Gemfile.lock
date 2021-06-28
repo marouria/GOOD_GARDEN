@@ -208,6 +208,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.34.0)
     sweetalert2 (7.25.6)
       railties (>= 3.1.0)
     thor (1.1.0)
@@ -266,6 +267,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   sweetalert2
   turbolinks (~> 5)
   tzinfo-data
