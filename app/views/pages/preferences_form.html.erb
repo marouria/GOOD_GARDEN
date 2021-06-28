@@ -1,16 +1,3 @@
-<!-- <script>
-  const scrollProgress = document.getElementById('scroll-progress');
-const height =
-  document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-window.addEventListener('scroll', () => {
-  const scrollTop =
-    document.body.scrollTop || document.documentElement.scrollTop;
-  scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
-});
-</script>
- -->
-
 <div class="container">
   <!-- <div class="container">
     <div id="scroll-progress" class="container" style="width: 27.4242%;"></div>
@@ -21,15 +8,17 @@ window.addEventListener('scroll', () => {
     <div class="question">
       <h2 class="mb-5">En quelle saison veux-tu planter ?</h2>
       <div>
+
+        <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
         <label for="summer">
-          <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
           <%= image_tag "icons/sun.svg", class:'answer-icon clickable' %>
         </label>
 
+        <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
         <label for="winter">
-          <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
           <%= image_tag "icons/snowflake.svg", class:'answer-icon clickable' %>
         </label><br>
+
       </div>
     </div>
   </div>
@@ -37,18 +26,19 @@ window.addEventListener('scroll', () => {
   <div class="question flex-center" id="question-2">
     <h2 class="mb-5">Quel est ton niveau en jardinage ?</h2>
     <div>
+
+      <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
       <label for="begin">
-        <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
         <%= image_tag "icons/leaf.png", class:'answer-icon clickable' %><br>Jeune pousse
       </label>
 
+      <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
       <label for="medium">
-        <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
         <%= image_tag "icons/floral.svg", class:'answer-icon clickable' %><br>Belle plante
       </label>
 
+      <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
       <label for="expert">
-        <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
         <%= image_tag "icons/tree.svg", class:'answer-icon clickable' %><br>Chêne centenaire
       </label>
     </div>
