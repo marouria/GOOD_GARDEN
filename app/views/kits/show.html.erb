@@ -14,7 +14,7 @@
     </thead>
 
     <tbody>
-
+      <% @plant_array = [] %>
       <% @plants.each_with_index do |plant, index| %>
       <% plant = Plant.find_by(id: @plants[index].plant_id) %>
 
@@ -24,9 +24,11 @@
         <td class="align-middle"><%= plant.name %></td>
         <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
       </tr>
-
-      <% @kit.price += plant.price %>
+      <% @plant_array << plant.price %>
       <% end %>
+
+      <% @kit.price = @plant_array.reduce(0, :+) %>
+      <% @kit.save %>
 
       <tr class="border-top">
         <td></td>
