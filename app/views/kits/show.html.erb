@@ -25,14 +25,14 @@
         <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
       </tr>
 
-      <% @total_price += plant.price %>
+      <% @kit.price += plant.price %>
       <% end %>
 
       <tr class="border-top">
         <td></td>
         <td></td>
         <td></td>
-        <td><p><strong>Total price : <%= @total_price %> €</strong></p></td>
+        <td><p><strong>Total price : <%= @kit.price %> €</strong></p></td>
       </tr>
 
     </tbody>
