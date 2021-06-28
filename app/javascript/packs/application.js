@@ -40,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   scroll();
   displayPlant();
   pointImages();
+  initSortable();
   initSweetalert('#payment-confirmation', {
     title: "Paiement confirmé!",
     text: "",
@@ -50,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
     link.click();
   }
   });
-initSortable();
+
 });
 
 
