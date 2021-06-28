@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_23_100840) do
+ActiveRecord::Schema.define(version: 2021_06_28_095459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_06_23_100840) do
   create_table "kits", force: :cascade do |t|
     t.string "slot"
     t.string "img_url"
-    t.integer "kit_price"
     t.string "name"
     t.boolean "tools", default: false
     t.bigint "user_id", null: false
