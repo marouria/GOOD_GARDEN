@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboards#index'
   get 'preferences', to: 'pages#preferences_form'
   post 'preferences', to: 'pages#submit_preferences_form'
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
