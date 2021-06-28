@@ -1,4 +1,5 @@
 class KitsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:new]
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
@@ -22,7 +23,7 @@ class KitsController < ApplicationController
       @kitplant.plant_id = plant[0]
       @kitplant.save
     end
-    if @kit.save
+    if @kitplant.save
       redirect_to kit_path(@kit)
     else
       render :new
