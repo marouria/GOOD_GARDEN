@@ -9,6 +9,7 @@ const initSortable = () => {
     animation: 150,
     draggable: ".tag-content",
 });
+console.log(selection.dataset.slots);
   new Sortable(selection, {
       group: {
         name: 'shared',
@@ -16,11 +17,9 @@ const initSortable = () => {
           return to.el.children.length < selection.dataset.slots;
         }
       },
-      onEnd: (event) => {
-    alert(`${event.oldIndex} moved to ${event.newIndex}`);
-  }
       animation: 150
     });
+ console.log(selection.dataset.slots);
 };
 
 
