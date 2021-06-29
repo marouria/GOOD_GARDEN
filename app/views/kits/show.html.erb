@@ -4,13 +4,13 @@
 <!-- Avec une table morray -->
 <div class="container">
 <div class="row">
-  <div class="col">
+<div class="col">
   <table class="table table-borderless">
 
     <thead class="border-bottom">
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col">Plante</th>
+      <th scope="col">Article</th>
       <th scope="col">Prix</th>
     </thead>
 
@@ -34,19 +34,27 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><p><strong>Total price :
+        <td><p style="font-size: 30px;"><strong>Total :
         <% if @kit.material_id.nil? %>
         <%= humanized_money_with_symbol(@kit.price) %>
         <% else %>
-        <%= @kit.price += @tool_kit.price %>
+        <%= humanized_money_with_symbol(@kit.price += @tool_kit.price) %>
         <% end %>
         </strong></p></td>
       </tr>
 
     </tbody>
   </table>
+  <div class="container d-flex justify-content-center">
+  <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+  <%= form_tag kit_orders_path(@kit) do %>
+  <%= hidden_field_tag 'kit_id', @kit.id %>
+  <%= submit_tag 'Commander', class: 'active-button' %>
+<% end %>
+</div>
   </div>
-<div class="col">
+
+  <div class="col">
   <div class="d-flex">
         <%= image_tag "tool-kit.jpg", style:"width:250px" %>
         <div class="card-info bg-light">
@@ -55,29 +63,19 @@
           <p><%= @tool_kit.description %></p>
           <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
           </div>
-          <%= link_to 'Ajouter', kit_tool_path(@kit), method:'PATCH', class:"active-button", id:"add-tools" %>
+          <%= link_to '+', kit_tool_path(@kit), method:'PATCH', remote: true, class:"active-button circle-button", id:"add-tools" %>
           <script>
             const addToolButton = document.getElementById('add-tools');
             addToolButton.addEventListener('click', (event) => {
               const lastProductTable = document.getElementById('total');
-              lastProductTable.insertAdjacentHTML('beforebegin', '<tr><td></td><td></td><td>Outils de jardinage</td><td>€20</td></tr>');
+              lastProductTable.insertAdjacentHTML('beforebegin', '<tr><td>+</td><td></td><td>Outils de jardinage</td><td>€20</td></tr>');
               });
           </script>
         </div>
       </div>
-</div>
-
  </div>
-
-<div class="container d-flex justify-content-center">
-  <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-
-  <%= form_tag kit_orders_path(@kit) do %>
-  <%= hidden_field_tag 'kit_id', @kit.id %>
-  <%= submit_tag 'Valider ma commande', class: 'active-button' %>
-<% end %>
+ </div>
 </div>
 
-<% console %>
 
 
