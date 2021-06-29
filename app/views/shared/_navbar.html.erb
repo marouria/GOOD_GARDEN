@@ -11,7 +11,6 @@
     <div class="navbar-link-position link-background flex-grow-2">
       <h4><%= link_to "Explorer nos plantes", plants_path, class: "nav-link middle"%></h4>
       <h4><%= link_to "Mon jardin", dashboard_path, class: "nav-link middle"%></h4>
-      <h4><%= link_to "A propos", "#", class: "nav-link middle"%></h4>
     </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent flex-grow-1">
@@ -33,7 +32,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-       <h4> <%= link_to "Créer un compte", new_user_session_path, class: "nav-link middle" %></h4>
+       <h4> <%= link_to "Se connecter", new_user_session_path, class: "nav-link middle" %></h4>
         </li>
       <% end %>
     </ul>
