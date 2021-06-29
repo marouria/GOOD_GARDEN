@@ -1,17 +1,23 @@
-<h1 class="text-center">Toutes nos plantes</h1>
-<div class="container cards">
-  <% @plants.each do |plant| %>
-  <%= link_to plant_path(plant), class: "text-decoration-none" do %>
-  <div class="cards-plant">
-    <div class="card-plant">
-      <div class="card-plant_image"> <img src="<%= plant.img_url %>" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))"/> </div>
-        <div class="card-plant_title title-color">
-          <h4><%= plant.name %></h4>
+<h1 class="text-center mb-5">Toutes nos plantes</h1>
+
+<div class="container">
+  <div class="cards">
+    <% @plants.each do |plant| %>
+    <%= link_to plant_path(plant), class: "text-decoration-none" do %>
+    <div class="card-trip">
+      <img src="<%= plant.img_url %>" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= plant.name %></h2>
+          <!-- <p>Short description here!</p> -->
         </div>
+        <h3 class="card-trip-pricing"><%= plant.price %> €</h3>
+        <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+      </div>
     </div>
+    <% end %>
+     <% end %>
   </div>
-  <% end %>
-  <% end %>
 </div>
 
 

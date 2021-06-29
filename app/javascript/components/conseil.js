@@ -9,10 +9,33 @@ const displayPlant = () => {
   plants.forEach(plant => {
     plant.addEventListener("mouseover", (event) => {
       generalAdvise.style.display = "none";
-      plantName.innerHTML = event.currentTarget.dataset.plant;
-      plantWatering.innerHTML = `Arrosage : ${event.currentTarget.dataset.watering}<i class="fas fa-tint"></i>`;
-      plantSunshine.innerHTML = `Exposition : ${event.currentTarget.dataset.sunshine}<i class="fas fa-sun"></i>`;
       specificAdvise.style.display = "block";
+      
+      plantName.innerHTML = event.currentTarget.dataset.plant;
+
+      // Watering icon
+      const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
+      const iconsW = [];
+      iconsWatering.forEach((iconWatering) => {
+        iconsW.push("<i class='fas fa-tint'></i>");
+      });
+      const watering = iconsW;
+      console.log(watering);
+      const iWatering = "".concat(...watering);
+      console.log(iWatering);
+
+      plantWatering.innerHTML = `Arrosage ${iWatering}`;
+
+      // Sunshine icon
+      const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
+      const iconsS = [];
+      iconsSunshine.forEach((iconSunshine) => {
+        iconsS.push("<i class='fas fa-sun'></i>");
+      });
+      const sunshine = iconsS;
+      const iSunshine = "".concat(...sunshine);
+
+      plantSunshine.innerHTML = `Exposition ${iSunshine}`;
     });
   });
 };
