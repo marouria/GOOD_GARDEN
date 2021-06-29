@@ -4,14 +4,16 @@
   position: sticky;
   top: 0;
   padding: 40px;
+  width: 400px;
 }
 
 .conseil h2 {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .conseil p {
-  margin-bottom: 30px;
+  text-align: left;
+  margin: 0;
 }
 
 .flexbox {
@@ -33,5 +35,21 @@
 
 #specific-advise {
   display: none;
-  min-width: 389.34px;
+  width: 400px;
+}
+
+.advises {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-around;
+}
+
+.fa-seedling {
+  padding: 10px;
+}
+
+.advice {
+  display: flex;
+  align-items: center;
 }
