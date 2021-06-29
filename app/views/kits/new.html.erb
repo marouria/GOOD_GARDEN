@@ -1,50 +1,45 @@
+<div class="container">
+  <h1 class="mb-5">Compose ton jardin </h1>
 
+</div>
 
-    <div class="container">
-      <h1 class="mb-5">Compose ton jardin </h1>
-      <p><em>(Glisser/déposer au maximum  <%= @slots%> plantes)</em></p>
-    </div>
-
-<div class="">
-
+<div class="text-center mb-5 mt-5" style="height: 100vh">
      <div class="column cards-g3" id="plant-list">
-
         <% @plants.each do |plant| %>
+
         <div class="tag-content" id="results">
-            <input class="tag-selector" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-            <label class="" for="plant-<%= plant.id %>">
-              <div class="card-trip-mini">
-                <img src="<%= plant.img_url %>" />
-                <div class="card-trip-infos">
+          <input class="tag-selector" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
+          <label class="" for="plant-<%= plant.id %>">
+
+          <div class="card-trip-mini">
+            <img src="<%= plant.img_url %>" />
+              <div class="card-trip-infos">
                   <div>
                     <h2><%= plant.name %></h2>
                     <!-- <p>Short description here!</p> -->
                   </div>
                   <h3 class="card-trip-pricing"><%= plant.price %> €</h3>
                   <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
-                </div>
               </div>
-            </label>
+          </div>
+          </label>
         </div>
-          <% end %>
-
+        <% end %>
       </div>
 
-      <div class="column right">
+      <div class="column">
+        <p><em>(Glisser/déposer au maximum  <%= @slots%> plantes)</em></p>
         <%= simple_form_for @kit do %>
-        <div id="selection" data-slots= <%= @slots %>>
+          <div id="selection" class="left" data-slots= <%= @slots %>>
       </div>
-
+      <div class="container mb-5">
+  <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+  <%= submit_tag "Valider", class: "active-button mt-5" %>
+<% end %>
+</div>
 </div>
 
 
-
-<div class="container mb-5">
-    <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-      <%= submit_tag "Valider", class: "active-button mt-5" %>
-      <% end %>
-
-</div>
 
 
 
