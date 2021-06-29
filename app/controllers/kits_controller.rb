@@ -30,10 +30,10 @@ class KitsController < ApplicationController
     end
   end
 
-  def add_tool_price
+  def add_tool
     @kit = Kit.find(params[:kit_id])
     @tool_kit = Material.find_by(name: "Outils de jardinage")
-    @kit.price += @tool_kit.price
+    @kit.material_id = @tool_kit[:id]
     @kit.save
   end
 
