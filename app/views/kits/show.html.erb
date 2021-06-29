@@ -34,7 +34,13 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><p><strong>Total price : <%= humanized_money_with_symbol(@kit.price) %></strong></p></td>
+        <td><p><strong>Total price :
+        <% if @kit.material_id.nil? %>
+        <%= humanized_money_with_symbol(@kit.price) %>
+        <% else %>
+        <%= @kit.price += @tool_kit.price %>
+        <% end %>
+        </strong></p></td>
       </tr>
 
     </tbody>
