@@ -1,0 +1,21 @@
+#results  {
+  cursor: grab;
+}
+
+#results :active {
+  cursor: grabbing;
+}
+
+#results.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+
+#selection  {
+  background-color: #DCE29F;
+  height:  70vh;
+  padding: 40px;
+  border-radius: 40px;
+}
+
