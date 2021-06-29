@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:show] do
-       # patch 'tool', to: 'orders#add_tool_price'
   end
   resources :plants, only: [:show, :index]
 

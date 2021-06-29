@@ -22,17 +22,4 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
   end
-
-  def add_tool_price
-    @order = current_user.orders.find(params[:order_id])
-    @kit_tool = Kit.find_by(name: "toolkit")
-    @order.amount += @kit_tool.price
-    @order.save
-  end
-
-  private
-
-  def orders_params
-    params.require(:order).permit(:amount)
-  end
 end

@@ -30,7 +30,7 @@
       <% @kit.price = @plant_array.reduce(0, :+) %>
       <% @kit.save %>
 
-      <tr class="border-top">
+      <tr class="border-top" id="total">
         <td></td>
         <td></td>
         <td></td>
@@ -49,7 +49,14 @@
           <p><%= @tool_kit.description %></p>
           <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
           </div>
-          <%= link_to 'Ajouter', kit_tool_path(@kit), method:'PATCH', class:"active-button" %>
+          <%= link_to 'Ajouter', kit_tool_path(@kit), method:'PATCH', class:"active-button", id:"add-tools" %>
+          <script>
+            const addToolButton = document.getElementById('add-tools');
+            addToolButton.addEventListener('click', (event) => {
+              const lastProductTable = document.getElementById('total');
+              lastProductTable.insertAdjacentHTML('beforebegin', '<tr><td></td><td></td><td>Outils de jardinage</td><td>€20</td></tr>');
+              });
+          </script>
         </div>
       </div>
 </div>
@@ -64,7 +71,5 @@
   <%= submit_tag 'Valider ma commande', class: 'active-button' %>
 <% end %>
 </div>
-
-<% console %>
 
 

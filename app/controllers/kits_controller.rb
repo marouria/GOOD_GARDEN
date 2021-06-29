@@ -34,16 +34,20 @@ class KitsController < ApplicationController
     @kit = Kit.find(params[:kit_id])
     @tool_kit = Material.find_by(name: "Outils de jardinage")
     @kit.price += @tool_kit.price
-    @kit.save!
+    @kit.save
   end
 
   private
 
   def params_kit
-    params.require(:kit).permit(:slot, :img_url, :kit_price, :name, :tools, :user_id)
+    params.require(:kit).permit(:slot, :img_url, :price, :name, :tools, :user_id)
   end
 
   def params_plant
     params.require(:kitplant).permit(:plant_id, :user_id)
+  end
+
+  def params_tool
+    params.require(:material).permit(:price)
   end
 end
