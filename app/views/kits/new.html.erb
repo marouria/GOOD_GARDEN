@@ -10,7 +10,11 @@
         <% @plants.each do |plant| %>
         <div class="tag-content" id="results">
             <input class="tag-selector" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-            <label class="" for="plant-<%= plant.id %>"><%= image_tag "#{plant.img_url}", size:"50", class:"rounded-lg mb-2" %> <br><%=plant.name %></label>
+            <label class="card-plant_image" for="plant-<%= plant.id %>">
+              <%= image_tag "#{plant.img_url}", width:"100" %>
+              <br><%=plant.name %>
+              <br><%= plant.price %> €
+            </label>
         </div>
           <% end %>
 
@@ -19,7 +23,6 @@
 
       </div>
     </div>
-    <br>
     <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
       <%= submit_tag "Valider", class: "active-button mt-5" %>
       <% end %>
@@ -29,4 +32,7 @@
 
 <%= content_tag :div, class: "temp_information", data: {temp: @slots} do %>
 <% end %>
+
+
+
 
