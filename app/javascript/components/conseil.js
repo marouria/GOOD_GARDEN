@@ -7,10 +7,13 @@ const displayPlant = () => {
   const specificAdvise = document.getElementById("specific-advise");
   
   plants.forEach(plant => {
-    plant.addEventListener("mouseover", (event) => {
-      generalAdvise.style.display = "none";
-      specificAdvise.style.display = "block";
-      
+    plant.addEventListener("click", (event) => {
+      // generalAdvise.style.display = "none";
+      // specificAdvise.style.display = "block";
+      generalAdvise.classList.toggle("advice-display");
+      specificAdvise.classList.toggle("advice-display");
+
+
       plantName.innerHTML = event.currentTarget.dataset.plant;
 
       // Watering icon
@@ -40,17 +43,17 @@ const displayPlant = () => {
   });
 };
 
-const backToDefault = () => {
-  const plants = document.querySelectorAll(".plant-garden");
-  const generalAdvise = document.getElementById("general-advise");
-  const specificAdvise = document.getElementById("specific-advise");
+// const backToDefault = () => {
+//   const plants = document.querySelectorAll(".plant-garden");
+//   const generalAdvise = document.getElementById("general-advise");
+//   const specificAdvise = document.getElementById("specific-advise");
 
-  plants.forEach(plant => {
-    plant.addEventListener("mouseleave", (event) => {
-      specificAdvise.style.display = "none";
-      generalAdvise.style.display = "block";
-    });
-  });
-};
+//   plants.forEach(plant => {
+//     plant.addEventListener("mouseleave", (event) => {
+//       specificAdvise.style.display = "none";
+//       generalAdvise.style.display = "block";
+//     });
+//   });
+// };
 
-export {displayPlant, backToDefault}
+export {displayPlant}
