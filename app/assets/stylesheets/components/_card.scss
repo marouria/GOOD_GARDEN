@@ -102,8 +102,6 @@
   color: black;
 }
 
-// Card Product
-
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -140,23 +138,12 @@
 }
 
 .card-garden {
-  width: 300px;
-  border-bottom: 1px solid grey;
+  width: auto;
   margin: auto;
   margin-top: 20px;
   padding-bottom: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   row-gap: 5px;
   column-gap: 5px;
-}
-
-.plant-garden {
-  border-radius: 4px;
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
