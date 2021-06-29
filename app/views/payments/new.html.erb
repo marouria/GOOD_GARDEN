@@ -1,29 +1,42 @@
-<div class="container ">
-      <h1>Recapitulatif de ma commande</h1>
+<div class="container">
+
+      <h1 class="mb-5">Recapitulatif de ma commande</h1>
+      <div class="container order-card" style="width:800px">
       <table class="table">
         <thead>
           <tr>
             <th scope="col">Quantité</th>
             <th scope="col">Produit</th>
-            <th scope="col">Total</th>
+            <th scope="col">Prix</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
             <th scope="row">kit de <%= @order.kit.slot %> emplacements</th>
-            <th scope="row"><%= humanized_money_with_symbol @order.amount %></th>
+            <th scope="row"><%= humanized_money_with_symbol @order.kit.price %></th>
           </tr>
         </tbody>
       </table>
 
-      <div class="d-flex bg-secondary">
+      <div class="d-flex">
         <%= image_tag "tool-kit.jpg", style:"width:250px" %>
         <div class="card-info bg-light">
+        <div class="title-text m-3" style="text-align: left;">
           <h3>Kit d'outils</h3>
-          <p>Vous avez mentionnez ne pas disposer d'outils. Voulez-vous ajouter notre kit outils composé de : à votre commande ?</p>
-          <button class="active-button">Ajouter</button>
+          <p>Voulez-vous ajouter à votre commande notre kit d'outils pour jardinier en herbe ? Il est composé :</p>
+          <ul>
+            <li>une pelle</li>
+            <li>un rateau</li>
+            <li>5kg de terreau</li>
+          </ul>
+          </div>
+          <%= link_to 'Ajouter', order_tool_path(@order), method:'PATCH', remote: true, class:"active-button" %>
         </div>
+      </div>
+
+      <div style="text-align: right;">
+        <p><strong>Total :</strong> <%= humanized_money_with_symbol @order.amount %></p>
       </div>
 
       <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
@@ -38,4 +51,7 @@
           });
         });
       </script>
+      </div>
 </div>
+
+<% console %>
