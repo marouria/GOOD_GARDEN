@@ -39,6 +39,16 @@
 
     </tbody>
   </table>
+  <div class="d-flex">
+        <%= image_tag "tool-kit.jpg", style:"width:250px" %>
+        <div class="card-info bg-light">
+        <div class="title-text m-3" style="text-align: left;">
+          <h3><%= @tool_kit.name %></h3>
+          <p><%= @tool_kit.description %></p>
+          </div>
+          <%= link_to 'Ajouter', method:'PATCH', remote: true, class:"active-button" %>
+        </div>
+      </div>
 </div>
 
 <div class="container d-flex justify-content-center">

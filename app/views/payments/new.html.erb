@@ -19,22 +19,6 @@
         </tbody>
       </table>
 
-      <div class="d-flex">
-        <%= image_tag "tool-kit.jpg", style:"width:250px" %>
-        <div class="card-info bg-light">
-        <div class="title-text m-3" style="text-align: left;">
-          <h3>Kit d'outils</h3>
-          <p>Voulez-vous ajouter à votre commande notre kit d'outils pour jardinier en herbe ? Il est composé :</p>
-          <ul>
-            <li>une pelle</li>
-            <li>un rateau</li>
-            <li>5kg de terreau</li>
-          </ul>
-          </div>
-          <%= link_to 'Ajouter', order_tool_path(@order), method:'PATCH', remote: true, class:"active-button" %>
-        </div>
-      </div>
-
       <div style="text-align: right;">
         <p><strong>Total :</strong> <%= humanized_money_with_symbol @order.amount %></p>
       </div>

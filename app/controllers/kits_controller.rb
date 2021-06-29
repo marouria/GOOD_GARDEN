@@ -3,6 +3,7 @@ class KitsController < ApplicationController
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
+    @tool_kit = Material.find_by(name: "Outils de jardinage")
   end
 
   def new
