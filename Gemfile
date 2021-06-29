@@ -32,6 +32,7 @@ gem 'devise'
 
 # gem stripe
 gem 'stripe'
+gem 'stripe_event'
 
 # gem money rails
 gem 'money-rails'
