@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   resources :kits, only: [:new, :create, :show] do
     resources :orders, only: [:create] do
       resources :payments, only: :new
-
     end
+
     resources :reviews, only: [:new, :create]
   end
 
-  resources :orders, only: [:show]
+  resources :orders, only: [:show] do
+       patch 'tool', to: 'orders#add_tool_price'
+  end
   resources :plants, only: [:show, :index]
 
   get 'dashboard', to: 'dashboards#index'

@@ -2,37 +2,54 @@
   <div class="dashboard-container d-flex">
     <div class="garden">
       <h1 class="text-center">Mon jardin</h1>
-      <% @kits_user.each do |kit_user| %>
-        <div class="card-garden">
-          <% kit_user.plants.each do |plant|%>
-          <div data-plant= <%= plant.name %> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> class="plant-garden" style="background-image: url(<%= plant.img_url %>);"></div>
+      <div class="kit-container">
+        <div class="accordion" id="accordionExample">
+          <% @kits_user.each_with_index do |kit_user, index| %>
+            <div class="card">
+              <div class="card-header">
+                <h2 class="mb-0">
+                  <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="true" aria-controls="collapse<%= kit_user.id %>">
+                    <%= image_tag "icons/kit.svg", width:"47" %>
+                    <%= image_tag "icons/arrow-down.svg", width:"15" %>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse<%= kit_user.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="card-garden">
+                    <% kit_user.plants.each do |plant|%>
+                      <div data-plant= <%= plant.name %> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> class="plant-garden" style="background-image: url(<%= plant.img_url %>);"></div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
           <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
 
     <div id="general-advise" class="conseil text-center">
       <h2>Nos conseils généraux</h2>
       <div class="advises">
         <div class="advice">
-          <i class="fas fa-seedling"></i>
+          <%= image_tag "icons/watering-can.svg", class:"icons-advice" %>
           <p>Pensez à arroser vos plantes régulièrement</p>
         </div>
         <div class="advice">
-          <i class="fas fa-seedling"></i>
-          <p>Apportez leur de l'amour</p>
-        </div>
-        <div class="advice">
-          <i class="fas fa-seedling"></i>
+          <%= image_tag "icons/growth.svg", class:"icons-advice" %>
           <p>Leur lumière c'est vous</p>
         </div>
         <div class="advice">
-          <i class="fas fa-seedling"></i>
+        <%= image_tag "icons/heart-sketch.svg", class:"icons-advice" %>
+          <p>Apportez leur de l'amour</p>
+        </div>
+        <div class="advice">
+          <%= image_tag "icons/plant-advice.svg", class:"icons-advice" %>
           <p>Dans la vie, parfois il faut se planter</p>
         </div>
       </div>
     </div>
-
 
     <div id="specific-advise" class="conseil text-center advice-display">
       <h2 id="plant-name"></h2>
@@ -42,7 +59,5 @@
         <p>Nos conseils</p>
       </div>
     </div>
-
-
   </div>
 </div>
