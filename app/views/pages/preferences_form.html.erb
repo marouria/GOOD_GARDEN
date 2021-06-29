@@ -1,19 +1,30 @@
 <div class="container">
+
+<!-- Progress Bar HTML text -->
+
+<div class="container d-flex justify-content-center">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+</div>
+
   <%= form_tag new_kit_path, method: :get do %>
   <div class="question flex-center" id="question-1">
     <h1 class="mb-5">Parles nous de toi</h1>
     <div class="question">
       <h2 class="mb-5">En quelle saison veux-tu planter ?</h2>
       <div>
+
+        <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
         <label for="summer">
-          <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
           <%= image_tag "icons/sun.svg", class:'answer-icon clickable' %>
         </label>
 
+        <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
         <label for="winter">
-          <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
           <%= image_tag "icons/snowflake.svg", class:'answer-icon clickable' %>
         </label><br>
+
       </div>
     </div>
   </div>
@@ -21,18 +32,19 @@
   <div class="question flex-center" id="question-2">
     <h2 class="mb-5">Quel est ton niveau en jardinage ?</h2>
     <div>
+
+      <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
       <label for="begin">
-        <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
         <%= image_tag "icons/leaf.png", class:'answer-icon clickable' %><br>Jeune pousse
       </label>
 
+      <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
       <label for="medium">
-        <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
         <%= image_tag "icons/floral.svg", class:'answer-icon clickable' %><br>Belle plante
       </label>
 
+      <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
       <label for="expert">
-        <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
         <%= image_tag "icons/tree.svg", class:'answer-icon clickable' %><br>Chêne centenaire
       </label>
     </div>
@@ -70,4 +82,16 @@
   <% end %>
 </div>
 
+<!-- Scroll script -->
 
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100 + 3;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>

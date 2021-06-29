@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :kits, only: [:new, :create, :show] do
-    resources :orders, only: [:create]
+    resources :orders, only: [:create] do
+      resources :payments, only: :new
+
+    end
     resources :reviews, only: [:new, :create]
   end
 
@@ -13,4 +16,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboards#index'
   get 'preferences', to: 'pages#preferences_form'
   post 'preferences', to: 'pages#submit_preferences_form'
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
