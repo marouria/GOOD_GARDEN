@@ -14,8 +14,19 @@
 
 #selection  {
   background-color: #DCE29F;
-  height:  70vh;
-  padding: 40px;
-  border-radius: 40px;
+  min-height: 50vh;
+  padding: 100px;
+  border-radius: 4px;
+  width: 600px;
 }
 
+
+.column {
+  float: left;
+  width: 50%;
+  height: 100vh;
+}
+
+.right {
+  right: 20px;
+}
