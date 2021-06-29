@@ -13,7 +13,6 @@ class KitsController < ApplicationController
   end
 
   def create
-    # session[:plants] = params[:plant]
     @kit = Kit.new
     @kit.user_id = current_user.id
     @kit.save!
@@ -29,6 +28,13 @@ class KitsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def add_tool_price
+    @kit = Kit.find(params[:kit_id])
+    @tool_kit = Material.find_by(name: "Outils de jardinage")
+    @kit.price += @tool_kit.price
+    @kit.save!
   end
 
   private

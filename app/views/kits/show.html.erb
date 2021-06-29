@@ -3,7 +3,8 @@
 
 <!-- Avec une table morray -->
 <div class="container">
-
+<div class="row">
+  <div class="col">
   <table class="table table-borderless">
 
     <thead class="border-bottom">
@@ -26,7 +27,6 @@
       </tr>
       <% @plant_array << plant.price %>
       <% end %>
-
       <% @kit.price = @plant_array.reduce(0, :+) %>
       <% @kit.save %>
 
@@ -34,22 +34,27 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><p><strong>Total price : <%= @kit.price %> €</strong></p></td>
+        <td><p><strong>Total price : <%= humanized_money_with_symbol(@kit.price) %></strong></p></td>
       </tr>
 
     </tbody>
   </table>
+  </div>
+<div class="col">
   <div class="d-flex">
         <%= image_tag "tool-kit.jpg", style:"width:250px" %>
         <div class="card-info bg-light">
         <div class="title-text m-3" style="text-align: left;">
           <h3><%= @tool_kit.name %></h3>
           <p><%= @tool_kit.description %></p>
+          <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
           </div>
-          <%= link_to 'Ajouter', method:'PATCH', remote: true, class:"active-button" %>
+          <%= link_to 'Ajouter', kit_tool_path(@kit), method:'PATCH', class:"active-button" %>
         </div>
       </div>
 </div>
+
+ </div>
 
 <div class="container d-flex justify-content-center">
   <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
@@ -59,5 +64,7 @@
   <%= submit_tag 'Valider ma commande', class: 'active-button' %>
 <% end %>
 </div>
+
+<% console %>
 
 

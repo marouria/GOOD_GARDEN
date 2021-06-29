@@ -94,6 +94,6 @@ Order.create!(user_id: "#{User.last.id}", kit_id:"#{Kit.first.id}", status:"conf
 
 puts "#{Order.count} orders created !"
 
-Material.create!(name: "Outils de jardinage", description: "Ensemble d’outils de jardin - comprend 3 pièces d’outils à main utiles: truelle, transplanteur, râteau à main.Parfait pour tous vos besoins de jardin, y compris creuser, desserrer la terre, aérer, planter, désherber et plus encore.")
+Material.create!(name: "Outils de jardinage", description: "Ensemble d’outils de jardin - comprend 3 pièces d’outils à main utiles: truelle, transplanteur, râteau à main.Parfait pour tous vos besoins de jardin, y compris creuser, desserrer la terre, aérer, planter, désherber et plus encore.", price: 20)
 
 puts "#{Material.count} material created !"
