@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_23_100840) do
+ActiveRecord::Schema.define(version: 2021_06_28_115842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 2021_06_23_100840) do
   create_table "kits", force: :cascade do |t|
     t.string "slot"
     t.string "img_url"
-    t.integer "kit_price"
     t.string "name"
     t.boolean "tools", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_kits_on_user_id"
   end
 
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_06_23_100840) do
     t.bigint "kit_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "checkout_session_id"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["kit_id"], name: "index_orders_on_kit_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -53,10 +55,10 @@ ActiveRecord::Schema.define(version: 2021_06_23_100840) do
     t.string "img_url"
     t.string "season"
     t.string "user_level"
-    t.integer "price"
     t.integer "stock"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "reviews", force: :cascade do |t|

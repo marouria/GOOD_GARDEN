@@ -14,7 +14,7 @@
     </thead>
 
     <tbody>
-
+      <% @plant_array = [] %>
       <% @plants.each_with_index do |plant, index| %>
       <% plant = Plant.find_by(id: @plants[index].plant_id) %>
 
@@ -22,17 +22,19 @@
         <th class="align-middle" scope="row"><%= index + 1 %></th>
         <td><%= image_tag "#{plant.img_url}", size:"50" %></td>
         <td class="align-middle"><%= plant.name %></td>
-        <td class="align-middle"><%= plant.price %> €</td>
+        <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
       </tr>
-
-      <% @total_price += plant.price %>
+      <% @plant_array << plant.price %>
       <% end %>
+
+      <% @kit.price = @plant_array.reduce(0, :+) %>
+      <% @kit.save %>
 
       <tr class="border-top">
         <td></td>
         <td></td>
         <td></td>
-        <td><p><strong>Total price : <%= @total_price %> €</strong></p></td>
+        <td><p><strong>Total price : <%= @kit.price %> €</strong></p></td>
       </tr>
 
     </tbody>
@@ -41,7 +43,11 @@
 
 <div class="container d-flex justify-content-center">
   <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-  <button id="payment-confirmation" class="active-button">Payer</button>
-  <%= link_to 'Payer', dashboard_path, class:'active-button d-none', id:'pay-link' %>
+
+  <%= form_tag kit_orders_path(@kit) do %>
+  <%= hidden_field_tag 'kit_id', @kit.id %>
+  <%= submit_tag 'Valider ma commande', class: 'active-button' %>
+<% end %>
 </div>
+
 

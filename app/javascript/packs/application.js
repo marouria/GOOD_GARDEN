@@ -30,14 +30,18 @@ import "bootstrap";
 import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
-import {displayPlant} from '../components/conseil';
+import {initSortable} from '../components/sortable';
+import {displayPlant, backToDefault} from '../components/conseil';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroll();
   displayPlant();
+  backToDefault();
   pointImages();
+  initSortable();
   initSweetalert('#payment-confirmation', {
     title: "Paiement confirmé!",
     text: "",
@@ -48,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
     link.click();
   }
   });
+
 });
 
 
