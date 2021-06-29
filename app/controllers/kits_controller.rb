@@ -3,7 +3,6 @@ class KitsController < ApplicationController
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
-    @total_price = 0
   end
 
   def new
@@ -13,9 +12,10 @@ class KitsController < ApplicationController
   end
 
   def create
+    # session[:plants] = params[:plant]
     @kit = Kit.new
     @kit.user_id = current_user.id
-    @kit.save
+    @kit.save!
     @plants = params[:plant]
     @plants.each do |plant|
       @kitplant = KitPlant.new

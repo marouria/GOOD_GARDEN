@@ -1,4 +1,4 @@
-name,user_id,slot,img_url,kit_price,tools
+name,user_id,slot,img_url,price_cents,tools
 ,,2,,10,FALSE
 ,,4,,15,FALSE
 ,,6,,10,FALSE
