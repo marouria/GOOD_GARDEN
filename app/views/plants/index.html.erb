@@ -3,6 +3,7 @@
 <div class="container">
   <div class="cards">
     <% @plants.each do |plant| %>
+    <%= link_to plant_path(plant), class: "text-decoration-none" do %>
     <div class="card-trip">
       <img src="<%= plant.img_url %>" />
       <div class="card-trip-infos">
@@ -15,6 +16,7 @@
       </div>
     </div>
     <% end %>
+     <% end %>
   </div>
 </div>
 

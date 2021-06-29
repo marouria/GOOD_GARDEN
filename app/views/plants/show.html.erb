@@ -1,0 +1,31 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+    <h1><%= @plant.name %></h1><br><br><br><br>
+      <div class="flex-container">
+        <div class="card-plant-details">
+        <img src="<%= @plant.img_url %>" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))"/>
+          <div class="card-plant-details-infos">
+            <h2>Arrosage
+            <span style="padding-left: 10px">
+            <% @plant.watering.times do %>
+              <i class="fas fa-tint"></i>
+              <% end %>
+            </span>
+            </h2>
+            <h2>Exposition
+            <span style="padding-left: 10px">
+              <% @plant.sunshine_rate.times do %>
+              <i class="fas fa-sun"></i>
+               <% end %>
+            </span>
+            </h2>
+            <h2>Nos conseils</h2>
+            <p>Paragraphe à remplir sur nos conseils</p>
+          </div>
+        </div>
+      </div><br><br><br><br>
+       <%= link_to 'Explorer nos plantes', plants_path, class: "active-button" %>
+    </div>
+  </div>
+</div>
