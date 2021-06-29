@@ -1,38 +1,53 @@
-<div class="container py-5">
-  <div class="row">
 
-    <div class="col-12 col-md-6 offset-lg-3">
+
+    <div class="container">
       <h1 class="mb-5">Compose ton jardin </h1>
-      <p><em>(Sélectionne au maximum  <%= @slots%> plantes)</em></p>
+      <p><em>(Glisser/déposer au maximum  <%= @slots%> plantes)</em></p>
+    </div>
 
+<div class="">
 
-      <div id="plant-list">
+     <div class="column cards-g3" id="plant-list">
+
         <% @plants.each do |plant| %>
         <div class="tag-content" id="results">
             <input class="tag-selector" id="plant-<%= plant.id %>" name="plant[<%= plant.id %>]" value="<%= plant.id %>">
-            <label class="card-plant_image" for="plant-<%= plant.id %>">
-              <%= image_tag "#{plant.img_url}", width:"100" %>
-              <br><%=plant.name %>
-              <br><%= plant.price %> €
+            <label class="" for="plant-<%= plant.id %>">
+              <div class="card-trip-mini">
+                <img src="<%= plant.img_url %>" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= plant.name %></h2>
+                    <!-- <p>Short description here!</p> -->
+                  </div>
+                  <h3 class="card-trip-pricing"><%= plant.price %> €</h3>
+                  <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+                </div>
+              </div>
             </label>
         </div>
           <% end %>
 
-          <%= simple_form_for @kit do %>
-          <div id="selection" data-slots= <%= @slots %>>
-
       </div>
-    </div>
+
+      <div class="column right">
+        <%= simple_form_for @kit do %>
+        <div id="selection" data-slots= <%= @slots %>>
+      </div>
+
+</div>
+
+
+
+<div class="container mb-5">
     <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
       <%= submit_tag "Valider", class: "active-button mt-5" %>
       <% end %>
-  </div>
+
 </div>
+
+
 
 
 <%= content_tag :div, class: "temp_information", data: {temp: @slots} do %>
 <% end %>
-
-
-
-

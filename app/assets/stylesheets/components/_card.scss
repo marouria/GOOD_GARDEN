@@ -6,6 +6,11 @@
   grid-gap: 16px;
 }
 
+.cards-g3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .cards-recap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -218,3 +223,52 @@
   width: 40px;
 }
 
+// Card Trip Mini
+
+.card-trip-mini {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  height: 150px;
+  width: 150px;
+}
+
+.card-trip-mini > img {
+  height: 110px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip-mini h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip-mini h3 {
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip-mini p {
+  font-size: 6px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip-mini .card-trip-infos {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos-mini .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
