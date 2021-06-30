@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Good Garden"
+meta_title: "Good Garden - Deviens le jardinier dont tu as toujours rêvé"
+meta_description: "Un site pour commencer votre jardin rapidement et ne plus laisser mourir vos plantes"
+meta_image: "serre.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
