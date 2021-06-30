@@ -30,12 +30,14 @@
       <% @kit.price = @plant_array.reduce(0, :+) %>
       <% @kit.save %>
 
-      <tr id="display-toolkit" style="display: none;">
+      <% if @kit.material_id.present? %>
+      <tr id="display-toolkit">
         <td>+</td>
         <td></td>
         <td>Outils de jardinage</td>
         <td>€20</td>
       </tr>
+      <% end %>
 
       <tr class="border-top" id="total">
         <td></td>
@@ -70,21 +72,21 @@
           <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
           </div>
            <%= link_to '-', kit_tool_path(@kit), method:'PATCH', class:"inactive-button circle-button", remote:true, id:"remove-tools" %>
-          <script>
+          <!-- <script>
             const removeToolButton = document.getElementById('remove-tools');
             removeToolButton.addEventListener('click', (event) => {
               const toolkitLine = document.getElementById('display-toolkit');
               toolkitLine.style.display = 'none';
               });
-          </script>
+          </script> -->
           <%= link_to '+', kit_tool_path(@kit), method:'PATCH', class:"active-button circle-button", remote:true, id:"add-tools" %>
-          <script>
+          <!-- <script>
             const addToolButton = document.getElementById('add-tools');
             addToolButton.addEventListener('click', (event) => {
               const toolkitLine = document.getElementById('display-toolkit');
               toolkitLine.style.display = null;
               });
-          </script>
+          </script> -->
         </div>
       </div>
  </div>

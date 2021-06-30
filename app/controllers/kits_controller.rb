@@ -37,7 +37,9 @@ class KitsController < ApplicationController
     @kit.material_id = @tool_kit[:id]
     @kit.save
     else @kit.material_id = nil
+      @kit.save
     end
+    redirect_to kit_path(@kit)
   end
 
   private
