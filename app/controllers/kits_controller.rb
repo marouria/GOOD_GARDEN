@@ -10,6 +10,10 @@ class KitsController < ApplicationController
     @kit = Kit.new
     @plants = Plant.where(season: params[:season], user_level: params[:user_level])
     @slots = params[:slot]
+    if @plants.last.nil? || @slots.nil?
+      flash[:notice] = "Merci de sélectionner tous les champs"
+      redirect_to preferences_path
+    end
   end
 
   def create
@@ -17,16 +21,21 @@ class KitsController < ApplicationController
     @kit.user_id = current_user.id
     @kit.save!
     @plants = params[:plant]
-    @plants.each do |plant|
-      @kitplant = KitPlant.new
-      @kitplant.kit_id = @kit.id
-      @kitplant.plant_id = plant[0]
-      @kitplant.save
-    end
-    if @kitplant.save
-      redirect_to kit_path(@kit)
+    if @plants.nil?
+      flash[:notice] = "Merci de glisser/déposer au moins une plante"
+      redirect_back(fallback_location: root_path)
     else
-      render :new
+      @plants.each do |plant|
+        @kitplant = KitPlant.new
+        @kitplant.kit_id = @kit.id
+        @kitplant.plant_id = plant[0]
+        @kitplant.save
+      end
+      if @kitplant.save
+        redirect_to kit_path(@kit)
+      else
+        render :new
+      end
     end
   end
 
