@@ -8,17 +8,18 @@
             <div class="card">
               <div class="card-header">
                 <h2 class="mb-0">
-                  <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="true" aria-controls="collapse<%= kit_user.id %>">
+                  <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="false" aria-controls="collapse<%= kit_user.id %>">
+                    <%= index+1 %>
                     <%= image_tag "icons/kit.svg", width:"47" %>
                     <%= image_tag "icons/arrow-down.svg", width:"15" %>
                   </button>
                 </h2>
               </div>
-              <div id="collapse<%= kit_user.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div id="collapse<%= kit_user.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
-                      <div class="plant-garden card-trip" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
+                      <div class="plant-garden card-trip" data-toggle= "false" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
                         <img src="<%= plant.img_url%>">
                         <div class="card-trip-infos text-center">
                           <h2><%= plant.name %></h2>

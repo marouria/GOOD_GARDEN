@@ -30,8 +30,7 @@ import "bootstrap";
 import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
-import {displayPlant} from '../components/conseil';
-import {pointPlants} from '../components/conseil';
+import {displayPlant, displayBack, collapseKit} from '../components/conseil';
 import {initSortable} from '../components/sortable';
 
 
@@ -39,8 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroll();
-  displayPlant();
-  pointPlants();
+  displayPlant(), displayBack(), collapseKit();
   pointImages();
   initSortable();
   initSweetalert('#payment-confirmation', {
@@ -53,7 +51,4 @@ document.addEventListener('turbolinks:load', () => {
     link.click();
   }
   });
-
 });
-
-
