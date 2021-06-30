@@ -51,8 +51,6 @@ const displayPlant = () => {
   });
 };
 
-export {displayPlant}
-
 const displayBack = () => {
   const back = document.querySelector(".garden")
   const plants = document.querySelectorAll(".plant-garden");
@@ -74,4 +72,14 @@ const displayBack = () => {
   });
 };
 
-export {displayBack}
+const collapseKit = () => {
+  const buttons = document.querySelectorAll(".btn")
+
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      $('.collapse').collapse()
+    });
+  });
+};
+
+export {displayPlant, displayBack, collapseKit}
