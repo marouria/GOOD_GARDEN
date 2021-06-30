@@ -1,6 +1,7 @@
 const displayPlant = () => {
   const plants = document.querySelectorAll(".plant-garden");
   const plantName = document.getElementById("plant-name");
+  const plantImage = document.getElementById("plant-image");
   const plantWatering = document.getElementById("plant-watering");
   const plantSunshine = document.getElementById("plant-sunshine");
   const generalAdvise = document.getElementById("general-advise");
@@ -14,6 +15,7 @@ const displayPlant = () => {
       event.currentTarget.classList.toggle("plant-selection");
 
       plantName.innerHTML = event.currentTarget.dataset.plant;
+      plantImage.innerHTML = event.currentTarget.dataset.plant;
 
       // Watering icon
       const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
@@ -26,7 +28,7 @@ const displayPlant = () => {
       const iWatering = "".concat(...watering);
       console.log(iWatering);
 
-      plantWatering.innerHTML = `Arrosage ${iWatering}`;
+      plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
 
       // Sunshine icon
       const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
@@ -37,7 +39,7 @@ const displayPlant = () => {
       const sunshine = iconsS;
       const iSunshine = "".concat(...sunshine);
 
-      plantSunshine.innerHTML = `Exposition ${iSunshine}`;
+      plantSunshine.innerHTML = `Exposition <br> ${iSunshine}`;
     });
   });
 };
