@@ -3,6 +3,7 @@ class KitsController < ApplicationController
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
+    @tool_kit = Material.find_by(name: "Outils de jardinage")
   end
 
   def new
@@ -12,7 +13,6 @@ class KitsController < ApplicationController
   end
 
   def create
-    # session[:plants] = params[:plant]
     @kit = Kit.new
     @kit.user_id = current_user.id
     @kit.save!
@@ -30,13 +30,29 @@ class KitsController < ApplicationController
     end
   end
 
+  def add_tool
+    @kit = Kit.find(params[:kit_id])
+    @tool_kit = Material.find_by(name: "Outils de jardinage")
+    if @kit.material_id.nil?
+    @kit.material_id = @tool_kit[:id]
+    @kit.save
+    else @kit.material_id = nil
+      @kit.save
+    end
+    redirect_to kit_path(@kit)
+  end
+
   private
 
   def params_kit
-    params.require(:kit).permit(:slot, :img_url, :kit_price, :name, :tools, :user_id)
+    params.require(:kit).permit(:slot, :img_url, :price, :name, :tools, :user_id)
   end
 
   def params_plant
     params.require(:kitplant).permit(:plant_id, :user_id)
+  end
+
+  def params_tool
+    params.require(:material).permit(:price)
   end
 end

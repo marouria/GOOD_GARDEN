@@ -4,4 +4,5 @@ class Kit < ApplicationRecord
   has_many :plants, through: :kit_plants
   has_many :orders
   monetize :price_cents
+  # belongs_to :material
 end
