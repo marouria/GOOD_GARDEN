@@ -1,12 +1,10 @@
 class OrdersController < ApplicationController
   def create
     @kit = Kit.find(params[:kit_id])
-    if @kit.material_id.present?
-      @tool_kit = Material.find(@kit.material_id)
-    end
-    if @kit.material_id.nil?
-      @kit.price
-    else @kit.price += @tool_kit.price
+    if @kit.materials.present?
+      @kit.materials.each do |material|
+        @kit.price += material.price
+      end
     end
     @order = Order.create!(kit: @kit, amount: @kit.price, status:'pending', user: current_user)
 

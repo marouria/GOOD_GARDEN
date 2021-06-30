@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :kits, only: [:new, :create, :show] do
-    patch 'tool', to: 'kits#add_tool'
+    patch 'toolkit', to: 'kits#add_toolkit'
+    patch 'gloves', to: 'kits#add_gloves'
+    patch 'soil', to: 'kits#add_soil'
     resources :orders, only: [:create] do
       resources :payments, only: :new
     end

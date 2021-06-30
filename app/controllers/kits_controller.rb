@@ -20,6 +20,7 @@ class KitsController < ApplicationController
 
   def create
     @kit = Kit.new
+    @kit.price = 0
     @kit.user_id = current_user.id
     @kit.save!
     @plants = params[:plant]
@@ -29,6 +30,8 @@ class KitsController < ApplicationController
     else
       @plants.each do |plant|
         @kitplant = KitPlant.new
+        @kit.price += Plant.find(plant).first.price
+        @kit.save
         @kitplant.kit_id = @kit.id
         @kitplant.plant_id = plant[0]
         @kitplant.save
@@ -41,17 +44,40 @@ class KitsController < ApplicationController
     end
   end
 
-  def add_tool
+  def add_toolkit
+    @toolkit = Material.find_by(name: "Lot de 3 outils")
+    # @gloves = Material.find_by(name: "Gants de jardinage tendances")
+    # @soil = Material.find_by(name: "Terreau 5kg")
     @kit = Kit.find(params[:kit_id])
-    @tool_kit = Material.find_by(name: "Outils de jardinage")
-    if @kit.material_id.nil?
-    @kit.material_id = @tool_kit[:id]
-    @kit.save
-    else @kit.material_id = nil
-      @kit.save
-    end
+    @kitmaterial = KitMaterial.new
+    @kitmaterial.kit_id = @kit.id
+    @kitmaterial.material_id = @toolkit.id
+    @kitmaterial.save!
+
     redirect_to kit_path(@kit)
   end
+
+   def add_gloves
+    @gloves = Material.find_by(name: "Gants de jardinage tendances")
+    @kit = Kit.find(params[:kit_id])
+    @kitmaterial = KitMaterial.new
+    @kitmaterial.kit_id = @kit.id
+    @kitmaterial.material_id = @gloves.id
+    @kitmaterial.save!
+
+    redirect_to kit_path(@kit)
+   end
+
+   def add_soil
+    @soil = Material.find_by(name: "Terreau 5kg")
+    @kit = Kit.find(params[:kit_id])
+    @kitmaterial = KitMaterial.new
+    @kitmaterial.kit_id = @kit.id
+    @kitmaterial.material_id = @soil.id
+    @kitmaterial.save!
+
+    redirect_to kit_path(@kit)
+   end
 
   private
 
