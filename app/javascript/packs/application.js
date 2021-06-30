@@ -30,17 +30,17 @@ import "bootstrap";
 import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
-import {displayPlant, displayBack, collapseKit} from '../components/conseil';
 import {initSortable} from '../components/sortable';
+import {displayPlant, displayBack, collapseKit} from '../components/conseil';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   scroll();
-  displayPlant(), displayBack(), collapseKit();
   pointImages();
   initSortable();
+  displayPlant(), displayBack(), collapseKit();
   initSweetalert('#payment-confirmation', {
     title: "Paiement confirmé!",
     text: "",
