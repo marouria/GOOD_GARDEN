@@ -9,6 +9,9 @@ class KitsController < ApplicationController
     @kit = Kit.new
     @plants = Plant.where(season: params[:season], user_level: params[:user_level])
     @slots = params[:slot]
+    if (@plants.last.nil? || @slots.nil?)
+      redirect_to preferences_path
+    end
   end
 
   def create
