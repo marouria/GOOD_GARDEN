@@ -10,6 +10,8 @@ const displayPlant = () => {
     plant.addEventListener("click", (event) => {
       generalAdvise.classList.toggle("advice-display");
       specificAdvise.classList.toggle("advice-display");
+      console.log(event.currentTarget);
+      event.currentTarget.classList.toggle("plant-selection");
 
       plantName.innerHTML = event.currentTarget.dataset.plant;
 
@@ -41,3 +43,14 @@ const displayPlant = () => {
 };
 
 export {displayPlant}
+
+const pointPlants = () => {
+  const plants = document.querySelectorAll(".plant-garden");
+  plants.forEach((plant) => {
+    plant.addEventListener('mouseover', (event) => {
+      event.currentTarget.classList.add('pointer');
+    });
+  });
+};
+
+export {pointPlants}
