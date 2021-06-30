@@ -33,8 +33,11 @@ class KitsController < ApplicationController
   def add_tool
     @kit = Kit.find(params[:kit_id])
     @tool_kit = Material.find_by(name: "Outils de jardinage")
+    if @kit.material_id.nil?
     @kit.material_id = @tool_kit[:id]
     @kit.save
+    else @kit.material_id = nil
+    end
   end
 
   private

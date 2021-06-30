@@ -69,7 +69,15 @@
           <p><%= @tool_kit.description %></p>
           <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
           </div>
-          <%= link_to '+', kit_tool_path(@kit), method:'PATCH', remote: true, class:"active-button circle-button", id:"add-tools" %>
+           <%= link_to '-', kit_tool_path(@kit), method:'PATCH', class:"inactive-button circle-button", remote:true, id:"remove-tools" %>
+          <script>
+            const removeToolButton = document.getElementById('remove-tools');
+            removeToolButton.addEventListener('click', (event) => {
+              const toolkitLine = document.getElementById('display-toolkit');
+              toolkitLine.style.display = 'none';
+              });
+          </script>
+          <%= link_to '+', kit_tool_path(@kit), method:'PATCH', class:"active-button circle-button", remote:true, id:"add-tools" %>
           <script>
             const addToolButton = document.getElementById('add-tools');
             addToolButton.addEventListener('click', (event) => {
@@ -83,6 +91,5 @@
  </div>
 </div>
 
-
-
+<% console %>
 
