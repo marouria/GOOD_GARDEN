@@ -31,7 +31,7 @@ import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
 import {displayPlant} from '../components/conseil';
-import {pointPlants} from '../components/conseil';
+import {displayBack} from '../components/conseil';
 import {initSortable} from '../components/sortable';
 
 
@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   scroll();
   displayPlant();
-  pointPlants();
+  displayBack();
   pointImages();
   initSortable();
   initSweetalert('#payment-confirmation', {

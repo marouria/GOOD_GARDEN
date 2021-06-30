@@ -9,50 +9,69 @@ const displayPlant = () => {
   
   plants.forEach(plant => {
     plant.addEventListener("click", (event) => {
-      generalAdvise.classList.toggle("advice-display");
-      specificAdvise.classList.toggle("advice-display");
-      console.log(event.currentTarget);
-      event.currentTarget.classList.toggle("plant-selection");
+      if (event.currentTarget === plant) {
+        event.stopPropagation();
+        generalAdvise.style.display = "none";
+        specificAdvise.style.display = "block";
+        console.log("specific");
+        plants.forEach(plant => {
+          plant.classList.remove("plant-selection");
+        });
 
-      plantName.innerHTML = event.currentTarget.dataset.name;
-      plantImage.src=`${event.currentTarget.dataset.image}`;
+        event.currentTarget.classList.add("plant-selection");
 
-      // Watering
-      const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
-      const iconsW = [];
-      iconsWatering.forEach((iconWatering) => {
-        iconsW.push("<i class='fas fa-tint'></i>");
-      });
-      const watering = iconsW;
-      console.log(watering);
-      const iWatering = "".concat(...watering);
-      console.log(iWatering);
+        plantName.innerHTML = event.currentTarget.dataset.name;
+        plantImage.src=`${event.currentTarget.dataset.image}`;
 
-      plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
+        // Watering
+        const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
+        const iconsW = [];
+        iconsWatering.forEach((iconWatering) => {
+          iconsW.push("<i class='fas fa-tint'></i>");
+        });
+        const watering = iconsW;
+        console.log(watering);
+        const iWatering = "".concat(...watering);
+        console.log(iWatering);
 
-      // Sunshine
-      const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
-      const iconsS = [];
-      iconsSunshine.forEach((iconSunshine) => {
-        iconsS.push("<i class='fas fa-sun'></i>");
-      });
-      const sunshine = iconsS;
-      const iSunshine = "".concat(...sunshine);
+        plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
 
-      plantSunshine.innerHTML = `Exposition <br> ${iSunshine}`;
+        // Sunshine
+        const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
+        const iconsS = [];
+        iconsSunshine.forEach((iconSunshine) => {
+          iconsS.push("<i class='fas fa-sun'></i>");
+        });
+        const sunshine = iconsS;
+        const iSunshine = "".concat(...sunshine);
+
+        plantSunshine.innerHTML = `Exposition <br> ${iSunshine}`;
+      }
     });
   });
 };
 
 export {displayPlant}
 
-const pointPlants = () => {
+const displayBack = () => {
+  const back = document.querySelector(".garden")
   const plants = document.querySelectorAll(".plant-garden");
-  plants.forEach((plant) => {
-    plant.addEventListener('mouseover', (event) => {
-      event.currentTarget.classList.add('pointer');
-    });
+  const generalAdvise = document.getElementById("general-advise");
+  const specificAdvise = document.getElementById("specific-advise");
+
+  back.addEventListener("click", (event) => {
+    if (event.currentTarget === back) {
+      event.stopPropagation();
+      generalAdvise.style.display = "block";
+      specificAdvise.style.display = "none";
+      event.currentTarget.classList.remove("plant-selection");
+      console.log(event);
+      console.log("general");
+      plants.forEach(plant => {
+        plant.classList.remove("plant-selection");
+      });
+    }
   });
 };
 
-export {pointPlants}
+export {displayBack}
