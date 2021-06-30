@@ -4,53 +4,57 @@
   <ul class="toolcards">
   <li>
     <a href="" class="toolcard">
-      <img src="https://i.imgur.com/oYiTqum.jpg" class="toolcard__image" alt="" />
+      <%= image_tag "tool-kit.jpg", class:"toolcard__image" %>
       <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-          <img class="toolcard__button" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <button class="toolcard__button">+</button>
           <div class="toolcard__header-text">
-            <h3 class="toolcard__title">Jessica Parker</h3>
-            <span class="toolcard__price">1 hour ago</span>
+            <h3 class="toolcard__title"><%= @tool_kit.name %></h3>
+            <span class="toolcard__price"><%= humanized_money_with_symbol (@tool_kit.price) %></span>
           </div>
         </div>
-        <p class="toolcard__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        <p class="toolcard__description"><%= @tool_kit.description %></p>
       </div>
     </a>
   </li>
   <li>
     <a href="" class="toolcard">
-      <img src="https://i.imgur.com/2DhmtJ4.jpg" class="toolcard__image" alt="" />
-      <div class="toolcard__overlay">
+      <%= image_tag "gloves.jpg", class:"toolcard__image" %>
+<!--       <img src="https://i.imgur.com/2DhmtJ4.jpg" class="toolcard__image" alt="" />
+ -->      <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-          <img class="toolcard__button" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+          <button class="toolcard__button">+</button>
           <div class="toolcard__header-text">
-            <h3 class="toolcard__title">kim Cattrall</h3>
-            <span class="toolcard__price">3 hours ago</span>
+            <h3 class="toolcard__title"><%= @gloves.name %></h3>
+            <span class="toolcard__price"><%= humanized_money_with_symbol (@gloves.price) %></span>
           </div>
         </div>
-        <p class="toolcard__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        <p class="toolcard__description"><%= @gloves.description %></p>
       </div>
     </a>
   </li>
   <li>
     <a href="" class="toolcard">
-      <img src="https://i.imgur.com/oYiTqum.jpg" class="toolcard__image" alt="" />
-      <div class="toolcard__overlay">
+      <%= image_tag "soil.jpg", class:"toolcard__image" %>
+<!--       <img src="https://i.imgur.com/oYiTqum.jpg" class="toolcard__image" alt="" />
+ -->      <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-          <img class="toolcard__button" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+          <button class="toolcard__button">+</button>
           <div class="toolcard__header-text">
-            <h3 class="toolcard__title">Jessica Parker</h3>
-            <span class="toolcard__tagline">Lorem ipsum dolor sit amet consectetur</span>
-            <span class="toolcard__price">1 hour ago</span>
+            <h3 class="toolcard__title"><%= @soil.name %></h3>
+      <!--       <span class="toolcard__tagline">Lorem ipsum dolor sit amet consectetur</span> -->
+            <span class="toolcard__price"><%= humanized_money_with_symbol (@soil.price) %></span>
           </div>
         </div>
-        <p class="toolcard__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+        <p class="toolcard__description"><%= @soil.description %></p>
       </div>
     </a>
   </li>
 </ul>
 </div>
+
+<% console %>
 

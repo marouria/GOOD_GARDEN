@@ -377,13 +377,14 @@
 
 .toolcard__price {
   font-size: .8em;
-  color: #D7BDCA;
+  color: black;
+  font-weight:bold;
 }
 
 .toolcard__description {
   padding: 0 2em 2em;
   margin: 0;
-  color: #D7BDCA;
+  color: black;
   font-family: "MockFlowFont";
   display: -webkit-box;
   -webkit-box-orient: vertical;
