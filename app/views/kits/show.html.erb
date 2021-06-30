@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>Choisis tes outils de jardinage</h2>
+   <h1 class="mt-5 mb-5">Choisis tes outils de jardinage</h1>
+</div>
+
+<div class="container">
 
   <ul class="toolcards">
   <li>
@@ -53,13 +56,15 @@
     </div>
   </li>
 </ul>
-</div>
 
- <div class="container d-flex justify-content-between">
+<div class="container d-flex justify-content-between mb-5">
           <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
           <%= form_tag kit_orders_path(@kit) do %>
           <%= hidden_field_tag 'kit_id', @kit.id %>
           <%= submit_tag 'Commander', class: 'active-button' %>
           <% end %>
-        </div>
+</div>
+</div>
+
+
 

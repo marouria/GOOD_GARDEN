@@ -1,62 +1,59 @@
-<div class="d-flex align-items-center" style="min-height: 100vh;">
-<!-- Avec une table morray -->
 <div class="container">
-    <h1 class="mb-5">Recapitulatif de ma commande</h1>
-      <div class="container order-card" style="width:800px">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Produit</th>
-            <th scope="col">Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th><%= image_tag "jardiniere2.jpg", size:"50" %></th>
-            <th scope="row">1</th>
-            <th scope="row">Carré potager</th>
-            <th scope="row"><%= humanized_money_with_symbol @order.kit.price %></th>
-          </tr>
+   <h1 class="mt-5 mb-5">Récapitulatif de ta commande</h1>
+</div>
 
-          <% if @kit.materials.present? %>
-          <tr id="display-toolkit">
-            <td><%= image_tag "tools.jpg", size:"50" %></td>
-            <td>1</td>
-            <td>Outils de jardinage</td>
-            <td>€20</td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+<div class="">
+<!-- Avec une table morray -->
+        <div class="container order-card mt-5" style="width:800px">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Produit</th>
+              <th scope="col">Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><%= image_tag "jardiniere2.jpg", size:"50" %></th>
+              <th>1</th>
+              <th>Carré potager</th>
+              <th><%= humanized_money_with_symbol @order.kit.price %></th>
+            </tr>
 
-      <div style="text-align: right;">
-        <p style="font-size:30px; margin-bottom: 0;"><strong>Total : <%= humanized_money_with_symbol @order.amount %></strong></p>
-        <%= image_tag "credit-card.svg", size:"50" %>
-      </div >
-      <div class="container d-flex justify-content-center align-items-end">
-        <div class="col">
-        <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-        </div>
-        <div class="col">
-        <button id="pay" class="active-button">Payer</button>
-        </div>
-       </div>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
+            <% if @kit.materials.present? %>
+            <% @kit.materials.each do |material| %>
+            <tr>
+              <td><%= image_tag "tools.jpg", size:"50" %></td>
+              <td>1</td>
+              <td><%= material.name %></td>
+              <td><%= humanized_money_with_symbol material.price %></td>
+              <% end %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div style="text-align: right;">
+          <p style="font-size:30px;"><strong>Total : <%= humanized_money_with_symbol @order.amount %></strong></p>
+        </div >
+        <div class="container d-flex justify-content-between mb-5">
+          <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+          <button id="pay" class="active-button">Payer</button>
+         </div>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @order.checkout_session_id %>'
+            });
           });
-        });
-      </script>
-</div>
-</div>
+        </script>
+  </div>
 </div>
 
-<% console %>
 
 
