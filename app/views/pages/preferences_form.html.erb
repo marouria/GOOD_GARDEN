@@ -61,24 +61,11 @@
 
       <input type="radio" class="hidden-radio" id="6" name="slot" value="6">
       <label for="6"><%= image_tag "icons/slot-6.png", class:'answer-icon clickable' %></label><br>
+
+      <%= submit_tag "C'est parti !", class: "mt-5 active-button", id:"last" %>
     </div>
   </div>
 
-
-  <div class="question flex-center" id="question-4">
-    <h2 class="mb-5">As-tu besoin de matériel ? (terreau, outils)</h2>
-    <div>
-      <input type="radio" class="hidden-radio" id="answer_no" name="tools" value="false">
-      <label for="answer_no" class="inactive-button clickable">Non</label>
-      <input type="radio" class="hidden-radio" id="answer_yes" name="tools" value="true">
-      <label for="answer_yes" class="active-button clickable">Oui</label>
-    </div>
-  </div>
-
-  <div class="question flex-center" id="question-5">
-    <h2 class="mb-5">Prêt à composer ton jardin ?</h2>
-    <%= submit_tag "C'est parti !", class: "active-button", id:"last" %>
-  </div>
   <% end %>
 </div>
 
@@ -91,7 +78,7 @@ window.onscroll = function() {myFunction()};
 function myFunction() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100 + 3;
+  var scrolled = (winScroll / height) * 100 + 6;
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
