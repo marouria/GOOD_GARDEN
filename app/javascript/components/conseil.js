@@ -1,6 +1,7 @@
 const displayPlant = () => {
   const plants = document.querySelectorAll(".plant-garden");
   const plantName = document.getElementById("plant-name");
+  const plantImage = document.getElementById("plant-image");
   const plantWatering = document.getElementById("plant-watering");
   const plantSunshine = document.getElementById("plant-sunshine");
   const generalAdvise = document.getElementById("general-advise");
@@ -10,10 +11,13 @@ const displayPlant = () => {
     plant.addEventListener("click", (event) => {
       generalAdvise.classList.toggle("advice-display");
       specificAdvise.classList.toggle("advice-display");
+      console.log(event.currentTarget);
+      event.currentTarget.classList.toggle("plant-selection");
 
-      plantName.innerHTML = event.currentTarget.dataset.plant;
+      plantName.innerHTML = event.currentTarget.dataset.name;
+      plantImage.src=`${event.currentTarget.dataset.image}`;
 
-      // Watering icon
+      // Watering
       const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
       const iconsW = [];
       iconsWatering.forEach((iconWatering) => {
@@ -24,9 +28,9 @@ const displayPlant = () => {
       const iWatering = "".concat(...watering);
       console.log(iWatering);
 
-      plantWatering.innerHTML = `Arrosage ${iWatering}`;
+      plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
 
-      // Sunshine icon
+      // Sunshine
       const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
       const iconsS = [];
       iconsSunshine.forEach((iconSunshine) => {
@@ -35,9 +39,20 @@ const displayPlant = () => {
       const sunshine = iconsS;
       const iSunshine = "".concat(...sunshine);
 
-      plantSunshine.innerHTML = `Exposition ${iSunshine}`;
+      plantSunshine.innerHTML = `Exposition <br> ${iSunshine}`;
     });
   });
 };
 
 export {displayPlant}
+
+const pointPlants = () => {
+  const plants = document.querySelectorAll(".plant-garden");
+  plants.forEach((plant) => {
+    plant.addEventListener('mouseover', (event) => {
+      event.currentTarget.classList.add('pointer');
+    });
+  });
+};
+
+export {pointPlants}

@@ -63,21 +63,36 @@
 }
 
 .plant-garden {
-  border-radius: 4px;
+  // border-radius: 4px;
   margin: auto;
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  // width: 100px;
+  // height: 100px;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
 }
 
 .kit-container {
-  width: 750px;
+  width: 900px;
   margin: auto;
 }
 
 .icons-advice {
   width: 70px;
   padding: 15px;
+}
+
+.plant-selection {
+  width: 250px;
+  height: 250px;
+}
+
+#specific-advise p {
+  text-align: center;
+}
+
+#specific-advise img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
 }

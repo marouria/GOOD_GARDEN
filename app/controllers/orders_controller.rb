@@ -1,13 +1,20 @@
 class OrdersController < ApplicationController
   def create
     @kit = Kit.find(params[:kit_id])
+    if @kit.material_id.present?
+      @tool_kit = Material.find(@kit.material_id)
+    end
+    if @kit.material_id.nil?
+      @kit.price
+    else @kit.price += @tool_kit.price
+    end
     @order = Order.create!(kit: @kit, amount: @kit.price, status:'pending', user: current_user)
 
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
       name: @kit.id,
-      amount: @kit.price_cents,
+      amount: @order.amount_cents,
       currency: 'eur',
       quantity: 1
     }],
@@ -21,18 +28,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
-  end
+    @kit = @order.kit
 
-  def add_tool_price
-    @order = current_user.orders.find(params[:order_id])
-    @kit_tool = Kit.find_by(name: "toolkit")
-    @order.amount += @kit_tool.price
-    @order.save
-  end
-
-  private
-
-  def orders_params
-    params.require(:order).permit(:amount)
   end
 end

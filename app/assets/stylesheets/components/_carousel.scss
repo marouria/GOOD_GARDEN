@@ -5,8 +5,8 @@
 
 
 #padding-top {
-  padding-top: 200px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 40px;
 
 }
 
@@ -15,4 +15,24 @@
     border-radius: 4px;
     color: black;
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.backgroung-gardener {
+  background-color: #f4f4f4;
+}
+
+
+.icon-style {
+  width: 100px;
+}
+.card-icons {
+  align-items: center;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }

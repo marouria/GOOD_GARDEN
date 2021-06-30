@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
    def new
     @order = current_user.orders.where(status: 'pending').find(params[:order_id])
-    @kit_tool = Kit.find_by(name: "toolkit")
+    @kit = Kit.find(params[:kit_id])
   end
 end
