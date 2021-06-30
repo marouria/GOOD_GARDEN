@@ -18,13 +18,21 @@
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
-                      <div data-plant= <%= plant.name %> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> class="plant-garden" style="background-image: url(<%= plant.img_url %>);"></div>
+                      <div class="plant-garden card-trip" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
+                        <img src="<%= plant.img_url%>">
+                        <div class="card-trip-infos text-center">
+                          <h2><%= plant.name %></h2>
+                        </div>
+                      </div>
                     <% end %>
                   </div>
                 </div>
               </div>
             </div>
           <% end %>
+        </div>
+        <div class="mt-4 mb-4">
+          <%= link_to 'Ajouter un kit', preferences_path, class: "active-button" %>
         </div>
       </div>
     </div>
@@ -53,6 +61,7 @@
 
     <div id="specific-advise" class="conseil text-center advice-display">
       <h2 id="plant-name"></h2>
+      <img src="" id="plant-image">
       <div class="advises">
         <p id="plant-watering"></p>
         <p id="plant-sunshine"></p>
