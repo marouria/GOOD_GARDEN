@@ -65,8 +65,9 @@
     </div>
 
     <div class="col">
-      <div class="d-flex">
-        <%= image_tag "tool-kit.jpg", style:"width:250px" %>
+      <div class="d-flex style:"width=250px>
+        <div class="bg-white rounded p-3 shadow">
+        <%= image_tag "tools.jpg", style:"width:150px" %>
         <div class="card-info bg-light">
           <div class="title-text m-3" style="text-align: left;">
             <h3><%= @tool_kit.name %></h3>
@@ -78,6 +79,7 @@
           <%= link_to '+', kit_tool_path(@kit), method:'PATCH', class:"active-button circle-button", remote:true, id:"add-tools" %>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
