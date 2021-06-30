@@ -18,7 +18,7 @@
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
-                      <div class="plant-garden card-trip" data-plant= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
+                      <div class="plant-garden card-trip" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
                         <img src="<%= plant.img_url%>">
                         <div class="card-trip-infos text-center">
                           <h2><%= plant.name %></h2>
@@ -61,7 +61,7 @@
 
     <div id="specific-advise" class="conseil text-center advice-display">
       <h2 id="plant-name"></h2>
-      <img id="plant-image">
+      <img src="" id="plant-image">
       <div class="advises">
         <p id="plant-watering"></p>
         <p id="plant-sunshine"></p>

@@ -14,10 +14,10 @@ const displayPlant = () => {
       console.log(event.currentTarget);
       event.currentTarget.classList.toggle("plant-selection");
 
-      plantName.innerHTML = event.currentTarget.dataset.plant;
-      plantImage.innerHTML = event.currentTarget.dataset.plant;
+      plantName.innerHTML = event.currentTarget.dataset.name;
+      plantImage.src=`${event.currentTarget.dataset.image}`;
 
-      // Watering icon
+      // Watering
       const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
       const iconsW = [];
       iconsWatering.forEach((iconWatering) => {
@@ -30,7 +30,7 @@ const displayPlant = () => {
 
       plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
 
-      // Sunshine icon
+      // Sunshine
       const iconsSunshine = new Array(parseInt(event.currentTarget.dataset.sunshine, 10)).fill("");
       const iconsS = [];
       iconsSunshine.forEach((iconSunshine) => {
