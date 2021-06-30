@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_104833) do
+ActiveRecord::Schema.define(version: 2021_06_30_184240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "kit_materials", force: :cascade do |t|
+    t.bigint "kit_id", null: false
+    t.bigint "material_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["kit_id"], name: "index_kit_materials_on_kit_id"
+    t.index ["material_id"], name: "index_kit_materials_on_material_id"
+  end
 
   create_table "kit_plants", force: :cascade do |t|
     t.bigint "plant_id", null: false
@@ -96,6 +105,8 @@ ActiveRecord::Schema.define(version: 2021_06_30_104833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kit_materials", "kits"
+  add_foreign_key "kit_materials", "materials"
   add_foreign_key "kit_plants", "kits"
   add_foreign_key "kit_plants", "plants"
   add_foreign_key "kits", "materials"
