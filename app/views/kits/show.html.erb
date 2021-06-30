@@ -1,53 +1,87 @@
-
-<h1 class="text-center mt-5 mb-5">Ton carré personnalisé</h1>
-
+<div class="d-flex align-items-center" style="min-height: 100vh;">
+<div class="w-100 background">
 <!-- Avec une table morray -->
 <div class="container">
+  <h1 class="text-center mb-5">Ton carré personnalisé</h1>
+  <div class="row p-15">
+    <div class="col">
+      <table class="table table-borderless">
 
-  <table class="table table-borderless">
+        <thead class="border-bottom">
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">Article</th>
+          <th scope="col">Prix</th>
+        </thead>
 
-    <thead class="border-bottom">
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col">Plante</th>
-      <th scope="col">Prix</th>
-    </thead>
+        <tbody>
+          <% @plant_array = [] %>
+          <% @plants.each_with_index do |plant, index| %>
+          <% plant = Plant.find_by(id: @plants[index].plant_id) %>
 
-    <tbody>
-      <% @plant_array = [] %>
-      <% @plants.each_with_index do |plant, index| %>
-      <% plant = Plant.find_by(id: @plants[index].plant_id) %>
+          <tr class="">
+            <th class="align-middle" scope="row"><%= index + 1 %></th>
+            <td><%= image_tag "#{plant.img_url}", size:"50" %></td>
+            <td class="align-middle"><%= plant.name %></td>
+            <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
+          </tr>
 
-      <tr class="">
-        <th class="align-middle" scope="row"><%= index + 1 %></th>
-        <td><%= image_tag "#{plant.img_url}", size:"50" %></td>
-        <td class="align-middle"><%= plant.name %></td>
-        <td class="align-middle"><%= humanized_money_with_symbol(plant.price) %></td>
-      </tr>
-      <% @plant_array << plant.price %>
-      <% end %>
+          <% @plant_array << plant.price %>
+          <% end %>
+          <% @kit.price = @plant_array.reduce(0, :+) %>
+          <% @kit.save %>
 
-      <% @kit.price = @plant_array.reduce(0, :+) %>
-      <% @kit.save %>
+          <% if @kit.material_id.present? %>
+          <tr id="display-toolkit">
+            <td>+</td>
+            <td></td>
+            <td>Outils de jardinage</td>
+            <td>€20</td>
+          </tr>
+          <% end %>
 
-      <tr class="border-top">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><p><strong>Total price : <%= @kit.price %> €</strong></p></td>
-      </tr>
+          <tr class="border-top" id="total">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><p style="font-size: 30px;"><strong>Total :
+            <% if @kit.material_id.nil? %>
+            <%= humanized_money_with_symbol(@kit.price) %>
+            <% else %>
+            <%= humanized_money_with_symbol(@kit.price += @tool_kit.price) %>
+            <% end %>
+            </strong></p></td>
+          </tr>
+        </tbody>
+      </table>
 
-    </tbody>
-  </table>
+        <div class="container d-flex justify-content-between">
+          <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+          <%= form_tag kit_orders_path(@kit) do %>
+          <%= hidden_field_tag 'kit_id', @kit.id %>
+          <%= submit_tag 'Commander', class: 'active-button' %>
+          <% end %>
+        </div>
+    </div>
+
+    <div class="col">
+      <div class="d-flex">
+        <%= image_tag "tool-kit.jpg", style:"width:250px" %>
+        <div class="card-info bg-light">
+          <div class="title-text m-3" style="text-align: left;">
+            <h3><%= @tool_kit.name %></h3>
+            <p><%= @tool_kit.description %></p>
+            <p>Prix: <%= humanized_money_with_symbol(@tool_kit.price) %></p>
+          </div>
+          <div style="padding-bottom: 20px;">
+          <%= link_to '-', kit_tool_path(@kit), method:'PATCH', class:"inactive-button circle-button", remote:true, id:"remove-tools" %>
+          <%= link_to '+', kit_tool_path(@kit), method:'PATCH', class:"active-button circle-button", remote:true, id:"add-tools" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="container d-flex justify-content-center">
-  <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-
-  <%= form_tag kit_orders_path(@kit) do %>
-  <%= hidden_field_tag 'kit_id', @kit.id %>
-  <%= submit_tag 'Valider ma commande', class: 'active-button' %>
-<% end %>
 </div>
-
+</div>
 

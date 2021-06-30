@@ -18,6 +18,8 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
+    <title>GOODGarden</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -28,10 +30,8 @@
   </head>
 
   <body>
-
-
+    <%= render 'shared/navbar' %>
     <div class="layout">
-      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
