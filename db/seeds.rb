@@ -31,6 +31,7 @@ csv.each do |row|
   t.user_level = row ['user_level']
   t.price_cents = row ['price_cents']
   t.stock = row ['stock']
+  t.description = row ['description']
   if
     row['img_url'].include?('http')
     t.img_url = row['img_url']
