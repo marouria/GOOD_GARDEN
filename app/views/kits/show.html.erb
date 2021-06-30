@@ -30,6 +30,13 @@
       <% @kit.price = @plant_array.reduce(0, :+) %>
       <% @kit.save %>
 
+      <tr id="display-toolkit" style="display: none;">
+        <td>+</td>
+        <td></td>
+        <td>Outils de jardinage</td>
+        <td>€20</td>
+      </tr>
+
       <tr class="border-top" id="total">
         <td></td>
         <td></td>
@@ -66,8 +73,8 @@
           <script>
             const addToolButton = document.getElementById('add-tools');
             addToolButton.addEventListener('click', (event) => {
-              const lastProductTable = document.getElementById('total');
-              lastProductTable.insertAdjacentHTML('beforebegin', '<tr><td>+</td><td></td><td>Outils de jardinage</td><td>€20</td></tr>');
+              const toolkitLine = document.getElementById('display-toolkit');
+              toolkitLine.style.display = null;
               });
           </script>
         </div>
@@ -75,6 +82,7 @@
  </div>
  </div>
 </div>
+
 
 
 

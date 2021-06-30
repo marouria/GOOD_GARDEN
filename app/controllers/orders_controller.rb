@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def create
     @kit = Kit.find(params[:kit_id])
+    @tool_kit = Material.find(@kit.material_id)
     @order = Order.create!(kit: @kit, amount: @kit.price, status:'pending', user: current_user)
 
     session = Stripe::Checkout::Session.create(
