@@ -6,6 +6,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th scope="col"></th>
             <th scope="col">Quantité</th>
             <th scope="col">Produit</th>
             <th scope="col">Prix</th>
@@ -13,19 +14,35 @@
         </thead>
         <tbody>
           <tr>
+            <th><%= image_tag "jardiniere2.jpg", size:"50" %></th>
             <th scope="row">1</th>
-            <th scope="row">kit de <%= @order.kit.slot %> emplacements</th>
+            <th scope="row">Carré potager</th>
             <th scope="row"><%= humanized_money_with_symbol @order.kit.price %></th>
           </tr>
+
+          <% if @kit.material_id.present? %>
+          <tr id="display-toolkit">
+            <td><%= image_tag "tools.jpg", size:"50" %></td>
+            <td>1</td>
+            <td>Outils de jardinage</td>
+            <td>€20</td>
+          </tr>
+          <% end %>
         </tbody>
       </table>
 
       <div style="text-align: right;">
-        <p><strong>Total :</strong> <%= humanized_money_with_symbol @order.amount %></p>
-      </div>
-
-      <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
-      <button id="pay" class="active-button">Payer</button>
+        <p style="font-size:30px; margin-bottom: 0;"><strong>Total : <%= humanized_money_with_symbol @order.amount %></strong></p>
+        <%= image_tag "credit-card.svg", size:"50" %>
+      </div >
+      <div class="container d-flex justify-content-center align-items-end">
+        <div class="col">
+        <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
+        </div>
+        <div class="col">
+        <button id="pay" class="active-button">Payer</button>
+        </div>
+       </div>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
@@ -39,4 +56,5 @@
 </div>
 </div>
 </div>
+
 

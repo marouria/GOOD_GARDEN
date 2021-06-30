@@ -6,7 +6,7 @@
      <div class="row">
         <div class="col-12 col-md-6 offset-lg-3">
           <div class="bg-white rounded p-3 shadow">
-            <h2>Order #<%= @order.id %></h2>
+            <h2>Commande #<%= @order.id %></h2>
             <%= image_tag "jardiniere.jpg", id:"image-size" %>
 
             <% if @kit.material_id.present? %>
@@ -15,7 +15,7 @@
             <% end -%>
 
             <ul class="list-unstyled">
-              <li><strong>Date of your order:</strong> <%= @order.created_at.to_date %></li>
+              <li><strong>Date:</strong> <%= @order.created_at.to_date %></li>
               <li><strong>Total:</strong> <%= humanized_money_with_symbol @order.amount %></li>
             </ul><br><br>
             <%= link_to 'Voir mon jardin', dashboard_path, class: "active-button" %><br><br><br>
