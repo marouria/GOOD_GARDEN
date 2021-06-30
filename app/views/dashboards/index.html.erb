@@ -9,9 +9,17 @@
               <div class="card-header">
                 <h2 class="mb-0">
                   <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="false" aria-controls="collapse<%= kit_user.id %>">
-                    <%= index+1 %>
-                    <%= image_tag "icons/kit.svg", width:"47" %>
-                    <%= image_tag "icons/arrow-down.svg", width:"15" %>
+                    <div class="title">
+                      <div class="kit-infos">
+                        <% kit_user.orders.each do |order| %>
+                          <p>Kit #<%= index+1 %> créé le <%= order.created_at.to_date %> - <%= order.amount %>€</p>
+                        <% end %>
+                      </div>
+                      <div class="kit-icons">
+                        <%= image_tag "icons/kit.svg", width:"47" %>
+                        <%= image_tag "icons/arrow-down.svg", width:"15" %>
+                      </div>
+                    </div>
                   </button>
                 </h2>
               </div>
@@ -21,8 +29,9 @@
                     <% kit_user.plants.each do |plant|%>
                       <div class="plant-garden card-trip" data-toggle= "false" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
                         <img src="<%= plant.img_url%>">
-                        <div class="card-trip-infos text-center">
-                          <h2><%= plant.name %></h2>
+                        <div class="card-trip-infos">
+                          <p style="font-size: inherit;"><%= plant.name %></p>
+                          <p style="font-size: inherit;", class="card-trip-pricing"><%= plant.price %> €</p>
                         </div>
                       </div>
                     <% end %>
