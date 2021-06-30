@@ -20,7 +20,6 @@
 
 .backgroung-gardener {
   background-color: #f4f4f4;
-
 }
 
 
@@ -29,4 +28,11 @@
 }
 .card-icons {
   align-items: center;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }

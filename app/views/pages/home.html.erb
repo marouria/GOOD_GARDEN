@@ -7,38 +7,41 @@
   </div>
 </div>
 
-<div class="container">
-  <h2 style="font-size: 2.7rem;" >Comment ça fonctionne ?</h2>
-  <div class="cards"  id="flexbox">
-
-    <div class="card card-icons" style="width: 18rem;">
-      <%= image_tag "icons/shovel.svg", class:"card-img-top icon-style" %>
-      <div class="card-body">
-        <h4 class="card-text">1. Parles nous de toi</h4>
-         <p class="card-text">Réponds à notre petit quizz</p>
-      </div>
-    </div>
-
-    <div class="card card-icons" style="width: 18rem;">
-      <%= image_tag "icons/plant.svg", class:"card-img-top icon-style" %>
-      <div class="card-body">
-        <h4 class="card-text">2. Personalise ton kit</h4>
-        <p class="card-text">Choisis les plantes qui te plaisent<p>
-      </div>
-    </div>
-
-    <div class="card card-icons" style="width: 18rem;">
-      <%= image_tag "icons/pallets.svg", class:"card-img-top icon-style" %>
-      <div class="card-body">
-        <h4 class="card-text">3. Recois ton kit</h4>
-        <p class="card-text">Commence à jardiner!</p>
-      </div>
-    </div>
-
-  </div>
-  <%= link_to 'Commencer', preferences_path, class: "active-button" %><br><br><br><br><br>
-</div>
 <div class="backgroung-gardener">
+  <div class="container" style="padding-top: 60px">
+    <h2 style="font-size: 2.7rem;" >Comment ça fonctionne ?</h2>
+    <div class="cards"  id="flexbox">
+      <div class="card card-icons pt-4" style="width: 18rem;">
+        <%= image_tag "icons/shovel.svg", class:"card-img-top icon-style mb-5" %>
+        <div class="card-body">
+          <h4 class="card-text">1. Parles nous de toi</h4>
+           <p class="card-text">Réponds à notre petit quizz</p>
+        </div>
+      </div>
+
+      <div class="card card-icons pt-4" style="width: 18rem;">
+        <%= image_tag "icons/plant.svg", class:"card-img-top icon-style mb-5" %>
+        <div class="card-body">
+          <h4 class="card-text">2. Personalise ton kit</h4>
+          <p class="card-text">Choisis les plantes qui te plaisent<p>
+        </div>
+      </div>
+
+      <div class="card card-icons pt-4" style="width: 18rem;">
+        <%= image_tag "icons/pallets.svg", class:"card-img-top icon-style mb-5" %>
+        <div class="card-body">
+          <h4 class="card-text">3. Recois ton kit</h4>
+          <p class="card-text">Commence à jardiner!</p>
+        </div>
+      </div>
+
+    </div>
+    <%= link_to 'Commencer', preferences_path, class: "active-button" %><br><br><br><br><br>
+  </div>
+</div>
+
+
+<div class="vh-100 mb-5">
     <div class="container">
         <h2 style="font-size: 2.7rem;" id= "padding-top">Nos good gardener à l'honneur</h2><br>
           <div id="carouselExampleCaptions" class="carousel container slide carousel-resizing" data-ride="carousel">
