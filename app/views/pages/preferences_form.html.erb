@@ -16,12 +16,12 @@
       <div>
 
         <input type="radio" class="hidden-radio" id="summer" name="season" value="summer">
-        <label for="summer">
+        <label for="summer" data-number="1">
           <%= image_tag "icons/sun.svg", class:'answer-icon clickable' %>
         </label>
 
         <input type="radio" class="hidden-radio" id="winter" name="season" value="winter">
-        <label for="winter">
+        <label for="winter" data-number="1">
           <%= image_tag "icons/snowflake.svg", class:'answer-icon clickable' %>
         </label><br>
 
@@ -34,17 +34,17 @@
     <div>
 
       <input type="radio" class="hidden-radio" id="begin" name="user_level" value="begin">
-      <label for="begin">
+      <label for="begin" data-number="2">
         <%= image_tag "icons/leaf.png", class:'answer-icon clickable' %><br>Jeune pousse
       </label>
 
       <input type="radio" class="hidden-radio" id="medium" name="user_level" value="medium">
-      <label for="medium">
+      <label for="medium" data-number="2">
         <%= image_tag "icons/floral.svg", class:'answer-icon clickable' %><br>Belle plante
       </label>
 
       <input type="radio" class="hidden-radio" id="expert" name="user_level" value="expert">
-      <label for="expert">
+      <label for="expert" data-number="2">
         <%= image_tag "icons/tree.svg", class:'answer-icon clickable' %><br>Chêne centenaire
       </label>
     </div>
@@ -54,13 +54,13 @@
     <h2 class="mb-5">Combien de plantes veux-tu dans ton carré ?</h2>
     <div>
       <input type="radio" class="hidden-radio" id="2" name="slot" value="2">
-      <label for="2"><%= image_tag "icons/slot-2.png", class:'answer-icon clickable' %></label>
+      <label for="2" data-number="3"><%= image_tag "icons/slot-2.png", class:'answer-icon clickable' %></label>
 
       <input type="radio" class="hidden-radio" id="4" name="slot" value="4">
-      <label for="4"><%= image_tag "icons/slot-4.png", class:'answer-icon clickable' %></label>
+      <label for="4" data-number="3"><%= image_tag "icons/slot-4.png", class:'answer-icon clickable' %></label>
 
       <input type="radio" class="hidden-radio" id="6" name="slot" value="6">
-      <label for="6"><%= image_tag "icons/slot-6.png", class:'answer-icon clickable' %></label><br>
+      <label for="6" data-number="3"><%= image_tag "icons/slot-6.png", class:'answer-icon clickable' %></label><br>
 
       <%= submit_tag "C'est parti !", class: "mt-5 active-button", id:"last" %>
     </div>

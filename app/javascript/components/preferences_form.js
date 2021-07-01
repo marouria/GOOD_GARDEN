@@ -1,9 +1,13 @@
 const scroll = () => {
-  const questions = document.querySelectorAll(".question");
+  const questions = document.querySelectorAll(".clickable");
   questions.forEach((question) => {
     question.addEventListener('click', (event) => {
-      let number = parseInt(event.currentTarget.id[event.currentTarget.id.length -1], 10);
+      const parent =  event.currentTarget.parentElement;
+      console.log(parent);
+      let number = parseInt(parent.dataset.number[parent.dataset.number.length -1], 10);
+      console.log(number);
       location.href = `#question-${number+1}`;
+      // questions.parentElement.parentElement.parentElement.parentElement
     });
   });
 };
