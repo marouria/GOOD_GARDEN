@@ -1,3 +1,4 @@
+
 <div class="flexbox">
   <div class="dashboard-container d-flex">
     <div class="garden">
@@ -12,7 +13,7 @@
                     <div class="title">
                       <div class="kit-infos">
                         <% kit_user.orders.each do |order| %>
-                          <p>Kit #<%= index+1 %> créé le <%= order.created_at.to_date %> - <%= order.amount %>€</p>
+                          <p><strong>Kit #<%= index+1 %></strong> créé le <%= order.created_at.to_date.strftime("%d/%m/%y") %> - <em><%= order.amount %>€</em></p>
                         <% end %>
                       </div>
                       <div class="kit-icons">
@@ -27,7 +28,7 @@
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
-                      <div class="plant-garden card-trip" data-toggle= "false" data-name= <%= plant.name %> data-image= <%= plant.img_url%> data-watering= <%= plant.watering %> data-sunshine= <%= plant.sunshine_rate %> %>
+                      <div class="plant-garden card-trip" data-toggle= "false" data-name= '<%= plant.name %>' data-image= '<%= plant.img_url%>' data-watering= '<%= plant.watering %>' data-sunshine= '<%= plant.sunshine_rate %>' data-description= '<%= plant.description %>' %>
                         <img src="<%= plant.img_url%>">
                         <div class="card-trip-infos">
                           <p style="font-size: inherit;"><%= plant.name %></p>
@@ -78,7 +79,7 @@
       <div class="advises">
         <p id="plant-watering"></p>
         <p id="plant-sunshine"></p>
-        <p>Nos conseils</p>
+        <p id="plant-description"></p>
         <button id="backBtn" class="active-button">Retour aux conseils généraux</button>
       </div>
     </div>
