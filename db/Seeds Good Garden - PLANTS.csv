@@ -1,54 +1,54 @@
 name,watering,sunshine_rate,season,user_level,price_cents,stock,img_url,description
-Menthe,4,2,summer,begin,100,42,VDR-uVIHP_8,"La menthe est consommée partout à travers le monde et est très appréciée pour sa fraîcheur inégalable. En cuisine, elle se glisse facilement dans les plats et desserts auxquels elle apporte une agréable saveur dépaysante."
-Citron,2,2,summer,medium,400,22,KzDKyDi8wos,
-Basilic grand vert,3,1,summer,medium,200,31,KSJm1IOKLBU,
-Thym,2,2,summer,expert,100,16,Ut3vw1iLBgk,
-Ciboulette,2,2,summer,begin,100,11,5PloIyf_rJI,"La ciboulette, de son nom latin Allium schoenoprasum, fait partie de la famille des alliacées. Originaire d’Orient, cette plante aromatique a été très utilisée dans l’Antiquité et en Asie."
-Coriandre,2,2,summer,expert,100,31,N73L0EzbJ8Y,
-Persil geant d'Italie,2,1,summer,begin,100,15,Wnr2ohKUIYw,Cette variété ancienne produit un feuillage simple de couleur vert foncé. La présence de tâches sur les sachets est due à l’huile contenue dans les graines.
+Menthe,4,2,summer,begin,500,42,VDR-uVIHP_8,"La menthe est consommée partout à travers le monde et est très appréciée pour sa fraîcheur inégalable. En cuisine, elle se glisse facilement dans les plats et desserts auxquels elle apporte une agréable saveur dépaysante."
+Citron,2,2,summer,medium,700,22,KzDKyDi8wos,Le citronnier en pot est une excellente idée d’agrume à cultiver chez soi.
+Basilic vert,3,1,summer,medium,600,31,KSJm1IOKLBU,"La culture du basilic est aussi facile au jardin, entre deux plants de tomates, que sur un balcon ou une fenêtre, dans un pot ou une jardinière."
+Thym,2,2,summer,expert,900,16,Ut3vw1iLBgk,Le thym est à la fois une plante vivace tapissante et une formidable plante aromatique en cuisine.
+Ciboulette,2,2,summer,begin,400,11,5PloIyf_rJI,"La ciboulette, de son nom latin Allium schoenoprasum, fait partie de la famille des alliacées. Originaire d’Orient, cette plante aromatique a été très utilisée dans l’Antiquité et en Asie."
+Coriandre,2,2,summer,expert,500,31,N73L0EzbJ8Y,La coriandre est une plante aromatique dont la culture est adaptée à notre climat l’été.
+Persil d'Italie,2,1,summer,begin,500,15,Wnr2ohKUIYw,Cette variété ancienne produit un feuillage simple de couleur vert foncé. La présence de tâches sur les sachets est due à l’huile contenue dans les graines.
 Tomates cerises,1,1,summer,begin,400,34,ND9W782cP-Q,"La tomate cerise est l’un des fruits/légumes, les plus faciles à cultiver car elles poussent rapidement. Elle se cultive aussi bien en terre que en pot ou sur balcon ou terrasse et peut être récoltée tout au long de l’été."
-Houblon,4,2,winter,medium,200,18,xytUB1ZZsvk,
+Houblon,4,2,winter,medium,700,18,xytUB1ZZsvk,"Le houblon est une vivace volubile rhyzomateuse à tiges velues, considérée comme une liane herbacée."
 Radis,4,1,summer,begin,400,20,3vCaADeY8aM,"Le radis, qu’il soit rouge, noir ou blanc (daikon) est un légume croquant, rafraîchissant et légèrement piquant. Ses feuilles sont aussi comestibles."
-Carottes,2,2,summer,begin,100,50,uidpH617Fb8,"La carotte fait partie des légumes les plus cultivés au potager. Facile à réussir, on peut faire se succéder les récoltes en échelonnant les semis de février à juillet."
-Mini concombres,4,2,summer,medium,300,23,2GiRcLP_jkI,
-Pois,2,1,winter,expert,100,19,nwjRmbXbLgw,
-Cresson,2,1,summer,expert,400,36,Ti2QQ36R5dQ,
-Tournesol,3,2,summer,medium,300,12,nl5WAIXa9bs,
-Citronier,2,1,winter,expert,400,25,Z-Y6I45f9kQ,
-Eucalyptus,2,2,winter,expert,100,25,hX_hf2lPpUU,
-Champignons,3,1,winter,begin,100,47,qaUoTVTI6Cc,
-Aubergine,2,1,winter,medium,100,50,Ox_u9F-UqPI,
-Chou-rave,1,1,winter,medium,400,45,LA2RjSs3duY,
-Soucis des jardins,4,1,summer,begin,100,34,Cp4IS3A4BxI,Le souci des jardins est réputé pour chasser les mouches blanches qui attaquent parfois le basilic et les tomates.
-Bleuets des champs,1,1,summer,begin,400,43,coIBOiWBPjk,"Centaurea cyanus est une plante qui se développe, fleurit et produit des semences en une année. Elle germe en hiver puis fleurit de mai à juillet et meurt."
-Coquelicots,3,2,summer,expert,200,38,yGwW8BkvrWk,
-Œillet d'Inde,4,1,summer,begin,400,12,wYUuztU_3Mk,"L’œillet d’Inde est une très jolie fleur d’été. Comestible, anti-pucerons, colorée et aux propriétés médicinales, vous devez absolument la cultiver au jardin !"
-trèfle à 4 feuilles,1,1,winter,begin,400,26,w1MrSC_JMs8,
-Tomate ananas,2,2,summer,medium,400,40,https://noah-primeurs.fr/wp-content/uploads/2020/07/P1060512-scaled.jpg,
-Maïs,1,2,summer,medium,200,11,cTEIGlRYpuU,
-Courge,1,2,winter,expert,200,25,01JwZShLeeY,
-Haricot,1,1,winter,medium,200,29,BAQPTB2D5NM,
-Melon,3,2,summer,expert,400,12,H6NPHHWRZPw,
-Cosmos,1,1,summer,begin,400,33,JpK7Wdb9yE0,"Le cosmos est une fleur très élégante qui décore magnifiquement les jardins, les balcons ou les terrasses."
+Carottes,2,2,summer,begin,400,50,uidpH617Fb8,"La carotte fait partie des légumes les plus cultivés au potager. Facile à réussir, on peut faire se succéder les récoltes en échelonnant les semis de février à juillet."
+Mini concombres,4,2,summer,medium,300,23,2GiRcLP_jkI,"Le concombre se prête non seulement très bien à la culture sous serre, il est également facile à cultiver dehors en pleine terre."
+Pois,2,1,winter,expert,100,19,nwjRmbXbLgw,"Aussi délicieux à consommer que faciles à cultiver, les pois à écosser et gourmands ont bien leur place au potager."
+Cresson,2,1,summer,expert,400,36,Ti2QQ36R5dQ,Le cresson est un légume feuille de la famille des Brassicacées. Très simple à cultiver et pouvant vous offrir des récoltes généreuses
+Tournesol,3,2,summer,medium,600,12,nl5WAIXa9bs,"Facile à cultiver, cette belle plante fera le bonheur des oiseaux en automne comme en hiver."
+Citronier,2,1,winter,expert,500,25,Z-Y6I45f9kQ,"Le citronnier est un arbuste délicat de la famille des agrumes. Gourmand, il produit constamment fleurs et fruits, même si la grande période de récolte est à la fin de l'année."
+Eucalyptus,2,2,winter,expert,700,25,hX_hf2lPpUU,"L’eucalyptus est un arbuste de petite taille, au port pyramidal et au feuillage très bleu apportera une note de couleur intéressante tout au long de l'année aux petits jardins."
+Champignons,3,1,winter,begin,400,47,qaUoTVTI6Cc,"Les champignons comestibles peuvent être cultivés en extérieur comme en intérieur, dans une cave, un garage ou un endroit couvert dans le jardin."
+Aubergine,2,1,winter,medium,600,50,Ox_u9F-UqPI,"L'aubergine, légume fruit au port érigé, est cultivée comme une plante annuelle, ses feuilles sont ovales, généralement épineuses, la face supérieure est assez rugueuse."
+Chou-rave,1,1,winter,medium,600,45,LA2RjSs3duY,"Le chou-rave est un légume original dont on consomme la tige renflée qui prend l'aspect d'une boule. Elle se mange crue ou cuite et en fonction des variétés est blanche, verte ou violette."
+Soucis,4,1,summer,begin,500,34,Cp4IS3A4BxI,Le souci des jardins est réputé pour chasser les mouches blanches qui attaquent parfois le basilic et les tomates.
+Bleuets ,1,1,summer,begin,600,43,coIBOiWBPjk,"Centaurea cyanus est une plante qui se développe, fleurit et produit des semences en une année. Elle germe en hiver puis fleurit de mai à juillet et meurt."
+Coquelicots,3,2,summer,expert,300,38,yGwW8BkvrWk,"Le coquelicot, Papaver rhoeas, est une plante herbacée annuelle de la famille des papavéracées. Il est communément connu également sous le nom de pavot rouge, pavot coquelicot et ponceau."
+Œillet d'Inde,4,1,summer,begin,700,12,wYUuztU_3Mk,"L’œillet d’Inde est une très jolie fleur d’été. Comestible, anti-pucerons, colorée et aux propriétés médicinales, vous devez absolument la cultiver au jardin !"
+Trèfle 4 feuilles,1,1,winter,begin,600,26,w1MrSC_JMs8,Le trèfle à quatre feuilles est une mutation rare du trèfle blanc.
+Tomate ananas,2,2,summer,medium,400,40,https://noah-primeurs.fr/wp-content/uploads/2020/07/P1060512-scaled.jpg,"Grosse tomate de ""type beefsteak""(à chair de boeuf ), la tomate 'Ananas' a su gagner le cœur de nombreux jardiniers par un goût, une couleur et un poids qui font la différence !"
+Maïs,1,2,summer,medium,500,11,cTEIGlRYpuU,"Le maïs est une plante herbacée annuelle de hauteur variable et constituée d’une tige unique de gros diamètre, constituée d’un empilement de nœuds et d’entrenœuds."
+Courge,1,2,winter,expert,500,25,01JwZShLeeY,Les courges font partie de la famille des cucurbitacées. Il en existe une multitude de variétés. La courge est le légume de fin d’été et d’automne par excellence!
+Haricot,1,1,winter,medium,600,29,BAQPTB2D5NM,"Légume vert par excellence, aux qualités tant diététiques que gustatives, le haricot se décline en gousses croquantes ou en grains fondants et il nourrit le sol du jardin en même temps que le jardinier."
+Melon,3,2,summer,expert,400,12,H6NPHHWRZPw,"Le melon est un fruit, avec du sucre, mais est classé comme légume dans le potager."
+Cosmos,1,1,summer,begin,500,33,JpK7Wdb9yE0,"Le cosmos est une fleur très élégante qui décore magnifiquement les jardins, les balcons ou les terrasses."
 Capucine,3,1,summer,begin,400,33,Z1Z2ryY3Zkc,"La capucine est une plante herbacée qui produit tout l'été des fleurs classiquement orange ou jaune, mais aussi rose ou rouge chez certaines variétés."
-Potimarron,1,2,winter,expert,400,31,pzd1_-ctxCE,
-Sauge,4,2,winter,begin,100,45,ZjgwPWoM_wQ,
-Romarin,3,2,winter,begin,200,13,Wl-z9lbwkSI,
-Cerfeuil,1,1,winter,begin,200,32,https://www.marechal-fraicheur.fr/media/catalog/product/cache/7/image/1338x1338/c96a280f94e22e3ee3823dd0a1a87606/c/e/cerfeuil.jpg,
-Estragon,2,2,winter,begin,300,14,https://www.haifa-group.com/sites/default/files/article/tarragon%20herbs.jpg,
-Origan,3,2,winter,begin,200,20,96zlc1Bt51w,
-Laurier,1,1,winter,begin,200,20,https://media.cdnws.com/_i/48378/4079/3148/79/feuilles-de-laurier.jpeg,
-Cerisier,1,1,winter,medium,200,34,MF16lGb95WY,
-Laitue,1,1,winter,expert,300,38,V0C6tLde058,
-Fenouil,2,2,winter,medium,200,22,https://www.aprifel.com/wp-content/uploads/2019/02/fenouil.jpg,
-Groseillier,3,2,winter,medium,200,34,Yh1Hnjq_axE,
-Rosier,4,2,winter,expert,200,32,kcKiBcDTJt4,
-Fraisier non remontant,1,2,winter,expert,400,44,rfK7qmyPOEg,
-Fraisier commun,2,1,winter,medium,400,17,gkANpt2K2Hk,
-Epinards,4,1,summer,expert,100,15,6AAptb2kBak,
-Vigne,2,2,summer,expert,300,21,0oINwch9u4Y,
-Courgettes,4,2,summer,medium,400,12,ttyJGdk2kmU,
-Aloe Vera,1,2,summer,medium,200,30,T0inbt7nRME,
-Noyaux de Litchi,4,2,summer,expert,300,13,2D9PMRTJL2M,
-Cornichons,4,2,summer,begin,300,51,UrLT3x0x9sA,"Le cornichon est un légume-condiment de la famille des cucurbitacées, qui comprend les courges ou les concombres."
-Noyer,4,1,winter,medium,100,50,https://www.jardipartage.fr/wp-content/uploads/2020/08/Noyer-commun.jpg,
+Potimarron,1,2,winter,expert,500,31,pzd1_-ctxCE,"Le potimarron, également appelé Potiron d’Hokkaido ou Courge de Chine est un délicieux légume, charnu et savoureux."
+Sauge,4,2,winter,begin,300,45,ZjgwPWoM_wQ,"La sauge est une plante aromatique originaire de la région méditerranéenne. Très utilisée dans la cuisine du sud de l'Europe, elle est appréciée tant pour son goût camphré unique que pour ses vertus médicinales multiples."
+Romarin,3,2,winter,begin,400,13,Wl-z9lbwkSI,"Le romarin est un bel arbrisseau aromatique touffu qui pousse spontanément dans les collines sèches et calcaires du bassin méditerranéen, dans la garrigue et le maquis."
+Cerfeuil,1,1,winter,begin,400,32,https://www.marechal-fraicheur.fr/media/catalog/product/cache/7/image/1338x1338/c96a280f94e22e3ee3823dd0a1a87606/c/e/cerfeuil.jpg,"Le cerfeuil est une plante annuelle de la famille des ombellifères, parente du persil, originaire de la Russie méridionale et introduite en Europe par les romains."
+Estragon,2,2,winter,begin,400,14,https://www.haifa-group.com/sites/default/files/article/tarragon%20herbs.jpg,"C’est l’une des fines herbes à avoir toujours sous la main. Excellent condiment culinaire, la saveur de ses feuilles est unique. Plante aromatique facile à cultiver, l’estragon s’acclimatera sans soucis dans votre jardin..."
+Origan,3,2,winter,begin,600,20,96zlc1Bt51w,"L'origan est une plante aromatique utilisée plus particulièrement dans la cuisine italienne et principalement dans la pizza, mais aussi pour les potages et les ragoûts. Facile à cultiver et très mellifère, elle a aussi des propriétés médicinales."
+Laurier,1,1,winter,begin,400,20,https://media.cdnws.com/_i/48378/4079/3148/79/feuilles-de-laurier.jpeg,Le laurier sauce est réputé pour son feuillage très aromatique.
+Cerisier,1,1,winter,medium,600,34,MF16lGb95WY,Le cerisier est un de ceux qui demandent le moins de soins et qui produisent le plus facilement. Il est aussi un superbe arbre d’ornement.
+Laitue,1,1,winter,expert,400,38,V0C6tLde058,"La laitue est une salade de culture facile, qui réclame peu d’espace et très accessible, même sur un balcon."
+Fenouil,2,2,winter,medium,600,22,https://www.aprifel.com/wp-content/uploads/2019/02/fenouil.jpg,Le fenouil est une plante dont on consomme les racines et dont les vertus nutritives et aromatiques sont excellentes. C’est un très bon légume d’été.
+Groseillier,3,2,winter,medium,300,34,Yh1Hnjq_axE,Le groseillier aussi appelé raisinet offre de merveilleuses petites groseilles durant l’été.
+Rosier,4,2,winter,expert,500,32,kcKiBcDTJt4,"Les rosiers sont de magnifiques plantes à fleurs pour orner le jardin, les parcs ou la terrasse. Elles existent en une large variété d’espèces florifères donnant des roses de différentes couleurs (rose, rouge, blanche, jaune…)"
+Fraisier,1,2,winter,expert,400,44,rfK7qmyPOEg,"Le fraisier est une plante vivace stolonifère dont les feuilles mesurent 10 à 15 cm de haut, et sont dotées de trois folioles au joli contour dentelé, et d’un beau vert vif."
+Fraisier commun,2,1,winter,medium,400,17,gkANpt2K2Hk,"Cette plante vivace de la famille des Rosacées, est spontanée dans nos régions (fraise des bois)."
+Epinards,4,1,summer,expert,400,15,6AAptb2kBak,"L’épinard est un légume feuille facile et rapide de culture, idéal au printemps et à l’automne."
+Vigne,2,2,summer,expert,600,21,0oINwch9u4Y,"La vigne (Vitis vinifera) est une plante ligneuse dont les sarments peuvent grimper jusqu'à une hauteur de 5m, ce qui implique qu'elle ne s'installe pas n'importe où."
+Courgettes,4,2,summer,medium,500,12,ttyJGdk2kmU,"Les courgettes se cultivent facilement. De couleurs et de formes variées, une fois en place elles peuvent produire en quantité. Pour faire face à leur abondance, penser à les cuisiner en ratatouille ou les congeler pour en profiter pleinement à la saison froide."
+Aloe Vera,1,2,summer,medium,400,30,T0inbt7nRME,"Cette plante dite ""grasse"", cousine d’agaves, trouve sa place dans les jardins du Midi et dans nos intérieurs. Outre son allure originale, décorative, elle sert à soigner les brûlures par le suc provenant de ses feuilles coupées."
+Litchi,4,2,summer,expert,500,13,2D9PMRTJL2M,"Fruit rafraîchissant et exotique, son succès est grandissant sur les étals français. Traditionnellement associé au Nouvel an chinois, le litchi est un fruit festif qui regorge de vitamines."
+Cornichons,4,2,summer,begin,400,51,UrLT3x0x9sA,"Le cornichon est un légume-condiment de la famille des cucurbitacées, qui comprend les courges ou les concombres."
+Noyer,4,1,winter,medium,600,50,https://www.jardipartage.fr/wp-content/uploads/2020/08/Noyer-commun.jpg,"Le noyer est un formidable fruitier, également très ornemental. La culture et l’entretien, de la plantation à la taille, amélioreront votre récolte et la croissance du noyer."
