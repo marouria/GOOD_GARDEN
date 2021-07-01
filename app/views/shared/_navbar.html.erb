@@ -8,21 +8,24 @@
     </button>
   </div>
 
-<%= form_tag plants_path, class:"d-flex rounded-3", method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Trouver une plante"
-  %>
-   <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-<% end %>
+  <div>
+    <%= form_tag plants_path, class:"d-flex searchBar", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "",
+          id:"searchQueryInput",
+        placeholder: "Trouver une plante"
+      %>
+      <%= button_tag type: 'submit', class: "", id: "searchQuerySubmit" do %>
+        <i class="fas fa-search" aria-hidden="true"></i>
+      <% end %>
+      <% end %>
+  </div>
 
-    <div class="navbar-link-position link-background flex-grow-2">
-      <h4><%= link_to "Explorer nos plantes", plants_path, class: "nav-link middle"%></h4>
-      <h4><%= link_to "Mon jardin", dashboard_path, class: "nav-link middle"%></h4>
-    </div>
+  <div class="navbar-link-position link-background flex-grow-2">
+    <h4><%= link_to "Explorer nos plantes", plants_path, class: "nav-link middle"%></h4>
+    <h4><%= link_to "Mon jardin", dashboard_path, class: "nav-link middle"%></h4>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent flex-grow-1">
     <ul class="navbar-nav mr-auto">
