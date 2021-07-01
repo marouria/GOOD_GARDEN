@@ -10,7 +10,6 @@ const displayPlant = () => {
   plants.forEach(plant => {
     plant.addEventListener("click", (event) => {
       if (event.currentTarget === plant) {
-       
         generalAdvise.style.display = "none";
         specificAdvise.style.display = "block";
         plants.forEach(plant => {
@@ -56,9 +55,6 @@ const displayBack = () => {
 
   back.addEventListener("click", (event) => {
     if (event.currentTarget === back) {
-      // event.stopPropagation();
-      console.log("he");
-      console.log(event.currentTarget);
       generalAdvise.style.display = "block";
       specificAdvise.style.display = "none";
       event.currentTarget.classList.remove("plant-selection");
@@ -69,15 +65,4 @@ const displayBack = () => {
   });
 };
 
-const collapseKit = () => {
-  const buttons = document.querySelectorAll(".btn")
-
-  buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      $(event.currentTarget).collapse('toggle');
-      // document.getElementById()
-    });
-  });
-};
-
-export {displayPlant, displayBack, collapseKit}
+export {displayPlant, displayBack}

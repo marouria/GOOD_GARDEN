@@ -31,7 +31,6 @@
                         <img src="<%= plant.img_url%>">
                         <div class="card-trip-infos">
                           <p style="font-size: inherit;"><%= plant.name %></p>
-                          <p style="font-size: inherit;", class="card-trip-pricing"><%= plant.price %> €</p>
                         </div>
                       </div>
                     <% end %>
@@ -74,13 +73,13 @@
     </div>
 
     <div id="specific-advise" class="conseil text-center advice-display">
-      <button id="backBtn">Back</button>
       <h2 id="plant-name"></h2>
       <img src="" id="plant-image">
       <div class="advises">
         <p id="plant-watering"></p>
         <p id="plant-sunshine"></p>
         <p>Nos conseils</p>
+        <button id="backBtn" class="active-button">Retour aux conseils généraux</button>
       </div>
     </div>
   </div>

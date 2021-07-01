@@ -31,7 +31,7 @@ import {scroll} from '../components/preferences_form';
 import {pointImages} from '../components/preferences_form';
 import {initSweetalert} from '../components/sweetalert';
 import {initSortable} from '../components/sortable';
-import {displayPlant, displayBack, collapseKit} from '../components/conseil';
+import {displayPlant, displayBack} from '../components/conseil';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,10 +39,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   scroll();
   pointImages();
-  // initSortable();
+  initSortable();
   displayPlant();
   displayBack();
-  // collapseKit();
   initSweetalert('#payment-confirmation', {
     title: "Paiement confirmé!",
     text: "",
