@@ -1,0 +1,55 @@
+.step-progressbar {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  padding: 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    position: relative;
+
+    &:before {
+      width: 3em;
+      height: 3em;
+      content: counter(step);
+      counter-increment: step;
+      align-self: center;
+      background: #014034;
+      color: #fff;
+      border-radius: 100%;
+      line-height: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    &:after {
+      height: 2px;
+      width: calc(100% - 4em);
+      content: '';
+      background: #014034;
+      position: absolute;
+      top: 1.5em;
+      left: calc(50% + 2em);
+    }
+
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+
+    &--active {
+      &:before {
+        background: #DCE29F;
+      }
+    }
+
+    &--complete {
+      &:before {
+        content: '✔';
+      }
+    }
+  }
+}

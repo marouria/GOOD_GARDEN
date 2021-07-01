@@ -1,7 +1,14 @@
+<div class="container py-5">
+  <ul class="step-progressbar">
+    <li class="step-progressbar__item step-progressbar__item--active">Ajouter des plantes</li>
+    <li class="step-progressbar__item">Ajouter des outils</li>
+    <li class="step-progressbar__item">Payer</li>
+  </ul>
+</div>
+
 <div class="container">
   <h1 class="mb-5">Compose ton jardin </h1>
 
-</div>
 
 <% if !!flash[:errors] %>
 2  <% flash[:errors].each do |e| %>
@@ -42,6 +49,7 @@
   <a href="" onclick="history.go(-1)" class="inactive-button mr-5">Retour</a>
   <%= submit_tag "Valider", class: "active-button mt-5" %>
 <% end %>
+</div>
 </div>
 </div>
 
