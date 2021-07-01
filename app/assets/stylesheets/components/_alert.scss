@@ -1,6 +1,28 @@
 .alert {
+  height: 100px;
+  width: 300px;
   position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  right: 0;
+}
+
+.alert-dismissible {
+    padding: 3rem;
+    text-align: center;
+    /* padding-top: 3rem; */
+    margin: auto;
+}
+
+.hideMe {
+    -webkit-animation: cssAnimation 3s forwards;
+    animation: cssAnimation 3s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
 }
