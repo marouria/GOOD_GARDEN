@@ -83,13 +83,14 @@
 }
 
 #specific-advise p {
-  text-align: center;
+  text-align: left;
 }
 
 #specific-advise img {
   width: 100px;
   height: 100px;
   border-radius: 4px;
+  margin-bottom: 25px;
 }
 
 .title {
@@ -105,4 +106,9 @@
 
 .kit-infos p {
   margin: 0;
+  font-size: 20px;
+}
+
+#plant-description {
+  text-align: justify !important;
 }
