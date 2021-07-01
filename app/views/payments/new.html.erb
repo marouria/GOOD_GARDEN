@@ -13,7 +13,7 @@
 <div class="">
 <!-- Avec une table morray -->
         <div class="container order-card mt-5" style="width:800px">
-        <table class="table">
+        <table class="table ">
           <thead>
             <tr>
               <th scope="col"></th>
@@ -24,19 +24,19 @@
           </thead>
           <tbody>
             <tr>
-              <th><%= image_tag "jardiniere2.jpg", size:"50" %></th>
-              <th>1</th>
-              <th>Carré potager</th>
-              <th><%= humanized_money_with_symbol @order.kit.price %></th>
+              <th class="align-middle"><%= image_tag "jardiniere2.jpg", size:"80" %></th>
+              <th class="align-middle">1</th>
+              <th class="align-middle">Carré potager</th>
+              <th class="align-middle"><%= humanized_money_with_symbol @order.kit.price %></th>
             </tr>
 
             <% if @kit.materials.present? %>
             <% @kit.materials.each do |material| %>
             <tr>
-              <td><%= image_tag "tools.jpg", size:"50" %></td>
-              <td>1</td>
-              <td><%= material.name %></td>
-              <td><%= humanized_money_with_symbol material.price %></td>
+              <td class="align-middle"><%= image_tag "#{material.image_url}", size:"80" %></td>
+              <td class="align-middle">1</td>
+              <td class="align-middle"><%= material.name %></td>
+              <td class="align-middle"><%= humanized_money_with_symbol material.price %></td>
               <% end %>
             </tr>
             <% end %>
