@@ -9,11 +9,12 @@ require 'csv'
 
 puts 'clean db'
 KitPlant.destroy_all
+KitMaterial.destroy_all
 Order.destroy_all
+Material.destroy_all
 Kit.destroy_all
 Plant.destroy_all
 User.destroy_all
-Material.destroy_all
 # Van.destroy_all
 # User.destroy_all
 puts 'create seed db'

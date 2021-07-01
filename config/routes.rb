@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     patch 'toolkit', to: 'kits#add_toolkit'
     patch 'gloves', to: 'kits#add_gloves'
     patch 'soil', to: 'kits#add_soil'
+    patch 'toolkitremove', to: 'kits#remove_toolkit'
+    patch 'glovesremove', to: 'kits#remove_gloves'
+    patch 'soilremove', to: 'kits#remove_soil'
     resources :orders, only: [:create] do
       resources :payments, only: :new
     end

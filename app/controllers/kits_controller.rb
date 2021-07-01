@@ -79,6 +79,39 @@ class KitsController < ApplicationController
     redirect_to kit_path(@kit)
    end
 
+   def remove_toolkit
+    @kit = Kit.find(params[:kit_id])
+    @toolkit = Material.find_by(name: "Lot de 3 outils")
+    @kitmaterial = KitMaterial.where(kit_id: params[:kit_id], material_id: @toolkit.id)
+    if @kitmaterial.present?
+      @kitmaterial.last.destroy
+    end
+
+    redirect_to kit_path(@kit)
+   end
+
+   def remove_gloves
+    @kit = Kit.find(params[:kit_id])
+    @gloves = Material.find_by(name: "Gants de jardinage tendances")
+    @kitmaterial = KitMaterial.where(kit_id: params[:kit_id], material_id: @gloves.id)
+    if @kitmaterial.present?
+     @kitmaterial.last.destroy
+    end
+
+    redirect_to kit_path(@kit)
+   end
+
+   def remove_soil
+    @kit = Kit.find(params[:kit_id])
+    @soil = Material.find_by(name: "Terreau 5kg")
+    @kitmaterial = KitMaterial.where(kit_id: params[:kit_id], material_id: @soil.id)
+    if @kitmaterial.present?
+    @kitmaterial.last.destroy
+   end
+
+    redirect_to kit_path(@kit)
+   end
+
   private
 
   def params_kit
