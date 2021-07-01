@@ -29,6 +29,8 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+# gem pg-search
+gem 'pg_search', '~> 2.3.0'
 
 # gem stripe
 gem 'stripe'
