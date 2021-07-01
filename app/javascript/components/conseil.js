@@ -19,10 +19,11 @@ const displayPlant = () => {
 
         event.currentTarget.classList.add("plant-selection");
         
-        plantName.innerHTML = event.currentTarget.dataset.name;
+        plantName.innerHTML = `<a href="/plants/${event.currentTarget.dataset.id} "> ${event.currentTarget.dataset.name} </a>`
+        
         plantImage.src=`${event.currentTarget.dataset.image}`;
         plantDescription.innerHTML = `Description <br> ${event.currentTarget.dataset.description}`;
-        console.log(event.currentTarget.dataset.description);
+
         // Watering
         const iconsWatering = new Array(parseInt(event.currentTarget.dataset.watering, 10)).fill("");
         const iconsW = [];
