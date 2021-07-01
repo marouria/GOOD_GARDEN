@@ -3,7 +3,7 @@ class KitsController < ApplicationController
   def show
     @kit = Kit.find(params[:id])
     @plants = KitPlant.where(kit_id: params[:id])
-    @tool_kit = Material.find_by(name:"Lot de 3 outils")
+    @tool_kit = Material.find_by(name:"Lot de 5 outils")
     @gloves = Material.find_by(name:"Gants de jardinage tendances")
     @soil = Material.find_by(name:"Terreau 50L")
   end
@@ -45,7 +45,7 @@ class KitsController < ApplicationController
   end
 
   def add_toolkit
-    @toolkit = Material.find_by(name: "Lot de 3 outils")
+    @toolkit = Material.find_by(name: "Lot de 5 outils")
     # @gloves = Material.find_by(name: "Gants de jardinage tendances")
     # @soil = Material.find_by(name: "Terreau 5kg")
     @kit = Kit.find(params[:kit_id])
@@ -81,7 +81,7 @@ class KitsController < ApplicationController
 
    def remove_toolkit
     @kit = Kit.find(params[:kit_id])
-    @toolkit = Material.find_by(name: "Lot de 3 outils")
+    @toolkit = Material.find_by(name: "Lot de 5 outils")
     @kitmaterial = KitMaterial.where(kit_id: params[:kit_id], material_id: @toolkit.id)
     if @kitmaterial.present?
       @kitmaterial.last.destroy
