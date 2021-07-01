@@ -2,7 +2,7 @@
 <div class="flexbox">
   <div class="dashboard-container d-flex">
     <div class="garden">
-      <h1 class="text-center">Mon jardin</h1>
+      <h1 class="text-center">Le jardin de <%= current_user.first_name %></h1>
       <div class="kit-container">
         <div class="accordion" id="accordionExample">
           <% @kits_user.each_with_index do |kit_user, index| %>
@@ -24,7 +24,7 @@
                   </button>
                 </h2>
               </div>
-              <div id="collapse<%= kit_user.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div id="collapse<%= kit_user.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
