@@ -6,7 +6,7 @@
       <div class="kit-container">
         <div class="accordion" id="accordionExample">
           <% @kits_user.each_with_index do |kit_user, index| %>
-            <div class="card">
+            <div class="card mb-3">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="true" aria-controls="collapse<%= kit_user.id %>">
