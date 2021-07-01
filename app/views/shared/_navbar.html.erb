@@ -8,6 +8,17 @@
     </button>
   </div>
 
+<%= form_tag plants_path, class:"d-flex rounded-3", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Trouver une plante"
+  %>
+   <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+<% end %>
+
     <div class="navbar-link-position link-background flex-grow-2">
       <h4><%= link_to "Explorer nos plantes", plants_path, class: "nav-link middle"%></h4>
       <h4><%= link_to "Mon jardin", dashboard_path, class: "nav-link middle"%></h4>
