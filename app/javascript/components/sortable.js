@@ -3,14 +3,17 @@ import Sortable from 'sortablejs';
 const initSortable = () => {
   const list = document.querySelector('#plant-list');
   const selection = document.querySelector('#selection');
+  
+  if (list) {
+    new Sortable(list, {
+      group: 'shared', // set both lists to same group
+      animation: 150,
+      draggable: ".tag-content",
+    });
+  }
 
-  new Sortable(list, {
-    group: 'shared', // set both lists to same group
-    animation: 150,
-    draggable: ".tag-content",
-});
-console.log(selection.dataset.slots);
-  new Sortable(selection, {
+  if (selection) {
+    new Sortable(selection, {
       group: {
         name: 'shared',
         put: function (to) {
@@ -19,7 +22,7 @@ console.log(selection.dataset.slots);
       },
       animation: 150
     });
- console.log(selection.dataset.slots);
+  }
 };
 
 // onEnd: function (/**Event*/evt) {
