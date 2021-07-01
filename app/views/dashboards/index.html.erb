@@ -28,7 +28,7 @@
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
-                      <div class="plant-garden card-trip" data-toggle= "false" data-name= '<%= plant.name %>' data-image= '<%= plant.img_url%>' data-watering= '<%= plant.watering %>' data-sunshine= '<%= plant.sunshine_rate %>' data-description= '<%= plant.description %>' %>
+                      <div class="plant-garden card-trip" data-toggle= "false" data-name= '<%= plant.name %>' data-image= '<%= plant.img_url%>' data-watering= '<%= plant.watering %>' data-sunshine= '<%= plant.sunshine_rate %>' data-description= '<%= plant.description %>' data-id='<%= plant.id %>' %>
                         <img src="<%= plant.img_url%>">
                         <div class="card-trip-infos">
                           <p style="font-size: inherit;"><%= plant.name %></p>

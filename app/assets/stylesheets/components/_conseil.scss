@@ -112,3 +112,13 @@
 #plant-description {
   text-align: justify !important;
 }
+
+#plant-name:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+#plant-name a {
+  text-decoration: none;
+  color: inherit;
+}
