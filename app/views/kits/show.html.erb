@@ -19,9 +19,10 @@
       <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-            <button class="toolcard__button"><%= link_to '-', kit_toolkitremove_path(@kit), method:'PATCH', remote:true, class:"toolcard__button" %></button>
-            <p style = "padding-top: 15px;"><%= @kit.materials.where(name:"Lot de 5 outils").count %></p>
-          <button class="toolcard__button" style="flex-shrink: 0;"><%= link_to '+', kit_toolkit_path(@kit), method:'PATCH', remote:true, class:"toolcard__button" %></button>
+
+            <button class="toolcard__button"><%= link_to '-', kit_toolkitremove_path(@kit), method:'PATCH', remote:true, class:" nav-link white" %></button>
+            <p style = "padding-top: 15px;"><%= @kit.materials.where(name:"Lot de 3 outils").count %></p>
+          <button class="toolcard__button" style="flex-shrink: 0;"><%= link_to '+', kit_toolkit_path(@kit), method:'PATCH', remote:true, class:"nav-link white" %></button>
           <!-- <button class="toolcard__button">+</button> -->
           <div class="toolcard__header-text">
             <h3 class="toolcard__title"><%= @tool_kit.name %></h3>
@@ -38,9 +39,9 @@
       <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-          <button class="toolcard__button"><%= link_to '-', kit_glovesremove_path(@kit), method:'PATCH', class:"toolcard__button" %></button>
+          <button class="toolcard__button"><%= link_to '-', kit_glovesremove_path(@kit), method:'PATCH', class:"nav-link white" %></button>
           <p style = "padding-top: 15px;"><%= @kit.materials.where(name:"Gants de jardinage tendances").count %></p>
-          <button class="toolcard__button"><%= link_to '+', kit_gloves_path(@kit), method:'PATCH', class:"toolcard__button" %></button>
+          <button class="toolcard__button"><%= link_to '+', kit_gloves_path(@kit), method:'PATCH', class:"nav-link white" %></button>
           <div class="toolcard__header-text">
             <h3 class="toolcard__title"><%= @gloves.name %></h3>
             <span class="toolcard__price"><%= humanized_money_with_symbol (@gloves.price) %></span>
@@ -57,9 +58,9 @@
       <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-          <button class="toolcard__button"><%= link_to '-', kit_soilremove_path(@kit), method:'PATCH', class:"toolcard__button" %></button>
+          <button class="toolcard__button"><%= link_to '-', kit_soilremove_path(@kit), method:'PATCH', class:"nav-link white" %></button>
           <p style = "padding-top: 15px;"><%= @kit.materials.where(name:"Terreau 50L").count %></p>
-          <button class="toolcard__button"><%= link_to '+', kit_soil_path(@kit), method:'PATCH', class:"toolcard__button" %></button>
+          <button class="toolcard__button"><%= link_to '+', kit_soil_path(@kit), method:'PATCH', class:"nav-link white" %></button>
           <div class="toolcard__header-text">
             <h3 class="toolcard__title"><%= @soil.name %></h3>
             <span class="toolcard__price"><%= humanized_money_with_symbol (@soil.price) %></span>
