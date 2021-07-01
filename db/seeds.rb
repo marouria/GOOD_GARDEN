@@ -97,7 +97,7 @@ Order.create!(user_id: "#{User.last.id}", kit_id:"#{Kit.first.id}", status:"conf
 puts "#{Order.count} orders created !"
 
 Material.create!(name: "Terreau 50L", description: "Rempotez comme jamais avec ce sac de 50L de terreau fraîchement déporté des flandres intérieures. Qualité premium, enrichie en minéreaux.", price: 15, image_url: 'soil.jpg')
-Material.create!(name: "Lot de 3 outils", description: "Magnifique ensemble de jardinage comprenant une petite pelle, une truelle et un rateau. Tuteurs et fils de dressage fournis. Le tour transportable dans une boîte en bois vintage.", price: 20, image_url: 'tool-kit.jpg')
+Material.create!(name: "Lot de 5 outils", description: "Magnifique ensemble de jardinage comprenant deux petites pelles, un transplanteur, une truelle et un rateau. Tuteurs et fils de dressage fournis. Le tour transportable dans une boîte en bois vintage.", price: 20, image_url: 'tool-kit.jpg')
 Material.create!(name: "Gants de jardinage tendances", description: "Pour couper, déserber et piquer en toute sécurité! Set complet en inox.", price: 5, image_url: 'gloves.jpg')
 
 puts "#{Material.count} material created !"

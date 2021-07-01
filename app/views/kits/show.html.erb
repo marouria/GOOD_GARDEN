@@ -19,6 +19,7 @@
       <div class="toolcard__overlay">
         <div class="toolcard__header">
           <svg class="toolcard__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+
             <button class="toolcard__button"><%= link_to '-', kit_toolkitremove_path(@kit), method:'PATCH', remote:true, class:" nav-link white" %></button>
             <p style = "padding-top: 15px;"><%= @kit.materials.where(name:"Lot de 3 outils").count %></p>
           <button class="toolcard__button" style="flex-shrink: 0;"><%= link_to '+', kit_toolkit_path(@kit), method:'PATCH', remote:true, class:"nav-link white" %></button>
