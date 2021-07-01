@@ -39,8 +39,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   scroll();
   pointImages();
-  initSortable();
-  displayPlant(), displayBack(), collapseKit();
+  // initSortable();
+  displayPlant();
+  displayBack();
+  // collapseKit();
   initSweetalert('#payment-confirmation', {
     title: "Paiement confirmé!",
     text: "",

@@ -10,16 +10,15 @@ const displayPlant = () => {
   plants.forEach(plant => {
     plant.addEventListener("click", (event) => {
       if (event.currentTarget === plant) {
-        event.stopPropagation();
+       
         generalAdvise.style.display = "none";
         specificAdvise.style.display = "block";
-        console.log("specific");
         plants.forEach(plant => {
           plant.classList.remove("plant-selection");
         });
 
         event.currentTarget.classList.add("plant-selection");
-
+        
         plantName.innerHTML = event.currentTarget.dataset.name;
         plantImage.src=`${event.currentTarget.dataset.image}`;
 
@@ -30,9 +29,7 @@ const displayPlant = () => {
           iconsW.push("<i class='fas fa-tint'></i>");
         });
         const watering = iconsW;
-        console.log(watering);
         const iWatering = "".concat(...watering);
-        console.log(iWatering);
 
         plantWatering.innerHTML = `Arrosage <br> ${iWatering}`;
 
@@ -52,19 +49,19 @@ const displayPlant = () => {
 };
 
 const displayBack = () => {
-  const back = document.querySelector(".garden")
+  const back = document.getElementById("backBtn");
   const plants = document.querySelectorAll(".plant-garden");
   const generalAdvise = document.getElementById("general-advise");
   const specificAdvise = document.getElementById("specific-advise");
 
   back.addEventListener("click", (event) => {
     if (event.currentTarget === back) {
-      event.stopPropagation();
+      // event.stopPropagation();
+      console.log("he");
+      console.log(event.currentTarget);
       generalAdvise.style.display = "block";
       specificAdvise.style.display = "none";
       event.currentTarget.classList.remove("plant-selection");
-      console.log(event);
-      console.log("general");
       plants.forEach(plant => {
         plant.classList.remove("plant-selection");
       });
@@ -77,7 +74,8 @@ const collapseKit = () => {
 
   buttons.forEach(button => {
     button.addEventListener("click", (event) => {
-      $('.collapse').collapse()
+      $(event.currentTarget).collapse('toggle');
+      // document.getElementById()
     });
   });
 };

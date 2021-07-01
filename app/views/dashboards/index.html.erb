@@ -6,9 +6,9 @@
         <div class="accordion" id="accordionExample">
           <% @kits_user.each_with_index do |kit_user, index| %>
             <div class="card">
-              <div class="card-header">
+              <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                  <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="false" aria-controls="collapse<%= kit_user.id %>">
+                  <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapse<%= kit_user.id %>" aria-expanded="true" aria-controls="collapse<%= kit_user.id %>">
                     <div class="title">
                       <div class="kit-infos">
                         <% kit_user.orders.each do |order| %>
@@ -23,7 +23,7 @@
                   </button>
                 </h2>
               </div>
-              <div id="collapse<%= kit_user.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div id="collapse<%= kit_user.id %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                   <div class="card-garden">
                     <% kit_user.plants.each do |plant|%>
@@ -63,6 +63,10 @@
           <p>Apportez leur de l'amour</p>
         </div>
         <div class="advice">
+          <%= image_tag "icons/nuageux.svg", class:"icons-advice" %>
+          <p>Surveillez la météo</p>
+        </div>
+        <div class="advice">
           <%= image_tag "icons/plant-advice.svg", class:"icons-advice" %>
           <p>Dans la vie, parfois il faut se planter</p>
         </div>
@@ -70,6 +74,7 @@
     </div>
 
     <div id="specific-advise" class="conseil text-center advice-display">
+      <button id="backBtn">Back</button>
       <h2 id="plant-name"></h2>
       <img src="" id="plant-image">
       <div class="advises">
