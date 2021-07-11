@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :plants, only: [:show, :index]
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :plants, only: [:show, :index]
+    end
+  end
 
   get 'dashboard', to: 'dashboards#index'
   get 'preferences', to: 'pages#preferences_form'
