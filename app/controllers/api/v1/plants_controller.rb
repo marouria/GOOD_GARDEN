@@ -4,13 +4,13 @@ class Api::V1::PlantsController < Api::V1::BaseController
     @plants = policy_scope(Plant)
   end
 
-  def show
-  end
+  # def show
+  # end
 
-  private
+  # private
 
-  def set_plant
-    @plant = Plant.find(params[:id])
-    authorize @plant  # For Pundit
-  end
+  # def set_plant
+  #   @plant = Plant.find(params[:id])
+  #   authorize @plant  # For Pundit
+  # end
 end
