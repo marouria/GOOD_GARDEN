@@ -1,1 +1,11 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# GOOD-GARDEN
+
+> App to customize your garden kit depending on your profile
+
+### Links
+
+[web app](http://www.good-garden.club/)
+
+### API
+
+[Stripe API](https://stripe.com/docs/api)
